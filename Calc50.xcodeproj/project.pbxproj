@@ -13,6 +13,10 @@
 		0947750724DD711900DE4280 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0947750524DD711900DE4280 /* Main.storyboard */; };
 		0947750924DD711A00DE4280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0947750824DD711A00DE4280 /* Assets.xcassets */; };
 		0947750C24DD711A00DE4280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0947750A24DD711A00DE4280 /* LaunchScreen.storyboard */; };
+		0947751624DD77E800DE4280 /* SimpleArithmeticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947751524DD77E800DE4280 /* SimpleArithmeticView.swift */; };
+		0947751824DD79D900DE4280 /* ComplexArithmeticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947751724DD79D900DE4280 /* ComplexArithmeticView.swift */; };
+		0947751A24DD7A0300DE4280 /* UnitConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947751924DD7A0300DE4280 /* UnitConverterView.swift */; };
+		0947751C24DD7A2600DE4280 /* DateCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947751B24DD7A2600DE4280 /* DateCalculatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		0947750824DD711A00DE4280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0947750B24DD711A00DE4280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0947750D24DD711A00DE4280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0947751524DD77E800DE4280 /* SimpleArithmeticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleArithmeticView.swift; sourceTree = "<group>"; };
+		0947751724DD79D900DE4280 /* ComplexArithmeticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexArithmeticView.swift; sourceTree = "<group>"; };
+		0947751924DD7A0300DE4280 /* UnitConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterView.swift; sourceTree = "<group>"; };
+		0947751B24DD7A2600DE4280 /* DateCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,10 @@
 				094774FF24DD711900DE4280 /* AppDelegate.swift */,
 				0947750124DD711900DE4280 /* SceneDelegate.swift */,
 				0947750324DD711900DE4280 /* ViewController.swift */,
+				0947751524DD77E800DE4280 /* SimpleArithmeticView.swift */,
+				0947751724DD79D900DE4280 /* ComplexArithmeticView.swift */,
+				0947751924DD7A0300DE4280 /* UnitConverterView.swift */,
+				0947751B24DD7A2600DE4280 /* DateCalculatorView.swift */,
 				0947750524DD711900DE4280 /* Main.storyboard */,
 				0947750824DD711A00DE4280 /* Assets.xcassets */,
 				0947750A24DD711A00DE4280 /* LaunchScreen.storyboard */,
@@ -138,7 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0947751824DD79D900DE4280 /* ComplexArithmeticView.swift in Sources */,
+				0947751A24DD7A0300DE4280 /* UnitConverterView.swift in Sources */,
+				0947751624DD77E800DE4280 /* SimpleArithmeticView.swift in Sources */,
 				0947750424DD711900DE4280 /* ViewController.swift in Sources */,
+				0947751C24DD7A2600DE4280 /* DateCalculatorView.swift in Sources */,
 				0947750024DD711900DE4280 /* AppDelegate.swift in Sources */,
 				0947750224DD711900DE4280 /* SceneDelegate.swift in Sources */,
 			);
