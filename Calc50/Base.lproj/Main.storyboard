@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XBe-I9-LRZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ib8-eg-EMH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -258,10 +258,11 @@
                                         <rect key="frame" x="0.0" y="760.5" width="414" height="57.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <items>
-                                            <tabBarItem title="Simple Calculator" selectedImage="star.fill" catalog="system" id="Dp6-KJ-K4N"/>
-                                            <tabBarItem title="Advanced Calculator" selectedImage="star.fill" catalog="system" id="HZq-C8-Coq"/>
-                                            <tabBarItem title="Unit Converter" id="GDy-7k-MAa"/>
-                                            <tabBarItem title="Time &amp; Date" selectedImage="folder.fill" catalog="system" id="H18-QD-wwe"/>
+                                            <tabBarItem title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="eKJ-Oe-d8E"/>
+                                            <tabBarItem title="Simple Calculator" image="number.circle.fill" catalog="system" selectedImage="star.fill" id="Dp6-KJ-K4N"/>
+                                            <tabBarItem title="Advanced" image="list.number" catalog="system" selectedImage="star.fill" id="HZq-C8-Coq"/>
+                                            <tabBarItem title="Unit Converter" image="arrow.right.arrow.left.circle" catalog="system" id="GDy-7k-MAa"/>
+                                            <tabBarItem title="Time &amp; Date" image="clock.fill" catalog="system" selectedImage="folder.fill" id="H18-QD-wwe"/>
                                         </items>
                                     </tabBar>
                                 </subviews>
@@ -335,7 +336,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.right.arrow.left.circle" catalog="system" width="128" height="121"/>
+        <image name="clock.fill" catalog="system" width="128" height="121"/>
         <image name="folder.fill" catalog="system" width="128" height="95"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="list.number" catalog="system" width="128" height="97"/>
+        <image name="number.circle.fill" catalog="system" width="128" height="121"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>
