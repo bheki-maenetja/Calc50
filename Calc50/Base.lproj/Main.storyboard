@@ -616,7 +616,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eM0-OY-Bda">
-                                                        <rect key="frame" x="197" y="0.0" width="197" height="163"/>
+                                                        <rect key="frame" x="197" y="0.0" width="197" height="163.5"/>
                                                     </pickerView>
                                                 </subviews>
                                             </stackView>
@@ -631,7 +631,44 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0Q-ep-b8i">
                                         <rect key="frame" x="0.0" y="351.5" width="414" height="409"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WFU-vy-i4u">
+                                                <rect key="frame" x="10" y="0.0" width="394" height="409"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick the first date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lD-Wg-PVy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="d0A-vc-hvY">
+                                                        <rect key="frame" x="0.0" y="20" width="384" height="184"/>
+                                                    </datePicker>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick the second date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-ty-ucg">
+                                                        <rect key="frame" x="0.0" y="204.5" width="394" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-ic-5rx">
+                                                        <rect key="frame" x="0.0" y="225" width="394" height="184"/>
+                                                    </datePicker>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="PxW-ty-ucg" firstAttribute="height" secondItem="5lD-Wg-PVy" secondAttribute="height" id="25F-2z-l6F"/>
+                                                    <constraint firstItem="Efd-ic-5rx" firstAttribute="height" secondItem="WFU-vy-i4u" secondAttribute="height" multiplier="0.45" id="2Wh-YQ-7ba"/>
+                                                    <constraint firstItem="PxW-ty-ucg" firstAttribute="height" secondItem="WFU-vy-i4u" secondAttribute="height" multiplier="0.05" id="Dcu-CA-0XG"/>
+                                                    <constraint firstItem="Efd-ic-5rx" firstAttribute="height" secondItem="d0A-vc-hvY" secondAttribute="height" id="kEB-uT-qvz"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="WFU-vy-i4u" secondAttribute="bottom" id="Aqh-Kz-IoC"/>
+                                            <constraint firstAttribute="trailing" secondItem="WFU-vy-i4u" secondAttribute="trailing" constant="10" id="BSx-oG-Kuf"/>
+                                            <constraint firstItem="WFU-vy-i4u" firstAttribute="top" secondItem="M0Q-ep-b8i" secondAttribute="top" id="cvE-Sb-qFR"/>
+                                            <constraint firstItem="WFU-vy-i4u" firstAttribute="leading" secondItem="M0Q-ep-b8i" secondAttribute="leading" constant="10" id="q8z-FJ-qCP"/>
+                                        </constraints>
                                     </view>
                                     <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRT-pr-oIy">
                                         <rect key="frame" x="0.0" y="760.5" width="414" height="57.5"/>
