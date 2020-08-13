@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ib8-eg-EMH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gRH-q5-r2A">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -255,7 +255,7 @@
                                         </constraints>
                                     </view>
                                     <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsi-pu-Ct5">
-                                        <rect key="frame" x="0.0" y="761" width="414" height="57"/>
+                                        <rect key="frame" x="0.0" y="760.5" width="414" height="57.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <items>
                                             <tabBarItem title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="eKJ-Oe-d8E"/>
@@ -581,7 +581,84 @@
                     <view key="view" contentMode="scaleToFill" id="TfY-ld-tmE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aqS-QG-Tya">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iK-eb-D5K">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbE-s3-hqe">
+                                                <rect key="frame" x="0.0" y="70" width="414" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="RbE-s3-hqe" firstAttribute="centerY" secondItem="1iK-eb-D5K" secondAttribute="centerY" id="TF7-70-cgG"/>
+                                            <constraint firstItem="RbE-s3-hqe" firstAttribute="leading" secondItem="1iK-eb-D5K" secondAttribute="leading" id="fkp-Oq-GJW"/>
+                                            <constraint firstItem="RbE-s3-hqe" firstAttribute="centerX" secondItem="1iK-eb-D5K" secondAttribute="centerX" id="jol-E2-X6u"/>
+                                            <constraint firstAttribute="trailing" secondItem="RbE-s3-hqe" secondAttribute="trailing" id="yPp-gJ-wBx"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ny-hu-AdX">
+                                        <rect key="frame" x="0.0" y="188" width="414" height="163.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4y1-vv-7oU">
+                                                <rect key="frame" x="10" y="0.0" width="394" height="163.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculate the number of:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRI-Rw-3qP">
+                                                        <rect key="frame" x="0.0" y="71.5" width="197" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eM0-OY-Bda">
+                                                        <rect key="frame" x="197" y="0.0" width="197" height="163"/>
+                                                    </pickerView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="4y1-vv-7oU" firstAttribute="leading" secondItem="5ny-hu-AdX" secondAttribute="leading" constant="10" id="BDF-qh-y4b"/>
+                                            <constraint firstAttribute="trailing" secondItem="4y1-vv-7oU" secondAttribute="trailing" constant="10" id="IuC-Wr-ziu"/>
+                                            <constraint firstAttribute="bottom" secondItem="4y1-vv-7oU" secondAttribute="bottom" id="L6w-gV-zb7"/>
+                                            <constraint firstItem="4y1-vv-7oU" firstAttribute="top" secondItem="5ny-hu-AdX" secondAttribute="top" id="yh2-D7-4ZY"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0Q-ep-b8i">
+                                        <rect key="frame" x="0.0" y="351.5" width="414" height="409"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRT-pr-oIy">
+                                        <rect key="frame" x="0.0" y="760.5" width="414" height="57.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <items>
+                                            <tabBarItem title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="TSD-sX-AzL"/>
+                                            <tabBarItem title="Simple Calculator" image="number.circle.fill" catalog="system" selectedImage="star.fill" id="5Yh-XT-Nnm"/>
+                                            <tabBarItem title="Advanced" image="list.number" catalog="system" selectedImage="star.fill" id="OFW-lp-p4K"/>
+                                            <tabBarItem title="Unit Converter" image="arrow.right.arrow.left.circle" catalog="system" id="iCR-UN-mRu"/>
+                                            <tabBarItem title="Time &amp; Date" image="clock.fill" catalog="system" selectedImage="folder.fill" id="NdR-eb-IN6"/>
+                                        </items>
+                                    </tabBar>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1iK-eb-D5K" firstAttribute="height" secondItem="aqS-QG-Tya" secondAttribute="height" multiplier="0.23" id="6T0-xj-GPd"/>
+                                    <constraint firstItem="5ny-hu-AdX" firstAttribute="height" secondItem="aqS-QG-Tya" secondAttribute="height" multiplier="0.2" id="Ie7-3U-5tN"/>
+                                    <constraint firstItem="M0Q-ep-b8i" firstAttribute="height" secondItem="aqS-QG-Tya" secondAttribute="height" multiplier="0.5" id="zZe-gO-kMb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kc5-bC-YPe" firstAttribute="trailing" secondItem="aqS-QG-Tya" secondAttribute="trailing" id="8hT-Mi-zK2"/>
+                            <constraint firstItem="aqS-QG-Tya" firstAttribute="leading" secondItem="Kc5-bC-YPe" secondAttribute="leading" id="FQb-tZ-3P7"/>
+                            <constraint firstItem="aqS-QG-Tya" firstAttribute="top" secondItem="Kc5-bC-YPe" secondAttribute="top" id="axN-9T-m6C"/>
+                            <constraint firstItem="Kc5-bC-YPe" firstAttribute="bottom" secondItem="aqS-QG-Tya" secondAttribute="bottom" id="e0h-QH-M69"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Kc5-bC-YPe"/>
                     </view>
                     <navigationItem key="navigationItem" id="HR0-dV-98c"/>
