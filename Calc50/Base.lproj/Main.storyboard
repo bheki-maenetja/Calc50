@@ -95,6 +95,9 @@
                                                                 <state key="normal" title="Clear">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="p0B-Ud-ip0"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0U5-W9-pt7">
                                                                 <rect key="frame" x="104" y="0.0" width="102.5" height="99.5"/>
@@ -103,6 +106,9 @@
                                                                 <state key="normal" title="+/-">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="f4x-Q4-FPT"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSY-vg-Pka">
                                                                 <rect key="frame" x="207.5" y="0.0" width="103" height="99.5"/>
@@ -111,6 +117,9 @@
                                                                 <state key="normal" title="%">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="ghH-wm-No8"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKK-qU-SYr">
                                                                 <rect key="frame" x="311.5" y="0.0" width="102.5" height="99.5"/>
@@ -119,6 +128,9 @@
                                                                 <state key="normal" title="+">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="TzI-zx-Aed"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -132,6 +144,9 @@
                                                                 <state key="normal" title="7">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="sTD-LE-isF"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIP-yj-USa">
                                                                 <rect key="frame" x="104" y="0.0" width="102.5" height="99"/>
@@ -140,6 +155,9 @@
                                                                 <state key="normal" title="8">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="qU3-Qb-ZsU"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wla-zZ-3qi">
                                                                 <rect key="frame" x="207.5" y="0.0" width="103" height="99"/>
@@ -148,6 +166,9 @@
                                                                 <state key="normal" title="9">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="jnq-C9-vFD"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAr-4V-zf1">
                                                                 <rect key="frame" x="311.5" y="0.0" width="102.5" height="99"/>
@@ -156,6 +177,9 @@
                                                                 <state key="normal" title="-">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="Xm5-8n-j16"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -169,6 +193,9 @@
                                                                 <state key="normal" title="4">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="zF4-Kn-Alg"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6c-19-n2V">
                                                                 <rect key="frame" x="104" y="0.0" width="102.5" height="99"/>
@@ -177,6 +204,9 @@
                                                                 <state key="normal" title="5">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="nuB-t4-aBS"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twI-ku-2As">
                                                                 <rect key="frame" x="207.5" y="0.0" width="103" height="99"/>
@@ -185,6 +215,9 @@
                                                                 <state key="normal" title="6">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="Met-UB-dad"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ma4-eF-rIR">
                                                                 <rect key="frame" x="311.5" y="0.0" width="102.5" height="99"/>
@@ -193,6 +226,9 @@
                                                                 <state key="normal" title="x">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="l9B-mI-wQz"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -206,6 +242,9 @@
                                                                 <state key="normal" title="1">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="nlT-0V-wRk"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ef-VX-Q07">
                                                                 <rect key="frame" x="104" y="0.0" width="102.5" height="99.5"/>
@@ -214,6 +253,9 @@
                                                                 <state key="normal" title="2">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="jK3-c9-rlX"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRp-Vf-001">
                                                                 <rect key="frame" x="207.5" y="0.0" width="103" height="99.5"/>
@@ -222,6 +264,9 @@
                                                                 <state key="normal" title="3">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="sdX-JW-afY"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH7-qc-wdJ">
                                                                 <rect key="frame" x="311.5" y="0.0" width="102.5" height="99.5"/>
@@ -230,6 +275,9 @@
                                                                 <state key="normal" title="÷">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="vOG-ZB-UX6"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -243,6 +291,9 @@
                                                                 <state key="normal" title="0">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="kST-GL-eIp"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z1-Ys-Rwd">
                                                                 <rect key="frame" x="207.5" y="0.0" width="102.5" height="99"/>
@@ -251,6 +302,9 @@
                                                                 <state key="normal" title=".">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="J2H-kY-278"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dff-9R-7P9">
                                                                 <rect key="frame" x="311" y="0.0" width="103" height="99"/>
@@ -259,6 +313,9 @@
                                                                 <state key="normal" title="=">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonTap:" destination="XBe-I9-LRZ" eventType="touchUpInside" id="Krr-Xp-zys"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>

@@ -19,7 +19,15 @@ class SimpleArithmeticView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        answerText.text = "0"
+        expressionText.text = ""
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func buttonTap(_ sender: UIButton) {
+        if numberButtons.contains(sender) {
+            answerText.text = "\(String(answerText.text!))\(String(sender.title(for: .normal)!))"
+        }
     }
     
 
