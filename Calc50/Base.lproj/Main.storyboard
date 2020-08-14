@@ -293,6 +293,29 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Simple Calculator" image="textformat.123" catalog="system" id="OBE-BQ-YTG"/>
                     <navigationItem key="navigationItem" id="5jN-Eb-iNq"/>
+                    <connections>
+                        <outlet property="answerText" destination="cAR-mo-IZi" id="3dJ-IB-IXe"/>
+                        <outlet property="expressionText" destination="Cbu-zp-LvS" id="Smy-Ya-SdH"/>
+                        <outletCollection property="numberButtons" destination="uzb-Fi-JLh" collectionClass="NSMutableArray" id="bdw-u3-dFa"/>
+                        <outletCollection property="numberButtons" destination="Twd-7W-OXP" collectionClass="NSMutableArray" id="8aP-Qf-aYY"/>
+                        <outletCollection property="numberButtons" destination="8ef-VX-Q07" collectionClass="NSMutableArray" id="bSl-ux-shm"/>
+                        <outletCollection property="numberButtons" destination="NRp-Vf-001" collectionClass="NSMutableArray" id="YFs-BS-eNh"/>
+                        <outletCollection property="numberButtons" destination="FKq-Up-1Au" collectionClass="NSMutableArray" id="u0n-kU-I3u"/>
+                        <outletCollection property="numberButtons" destination="w6c-19-n2V" collectionClass="NSMutableArray" id="afL-Ls-zK5"/>
+                        <outletCollection property="numberButtons" destination="twI-ku-2As" collectionClass="NSMutableArray" id="9lK-H7-7lK"/>
+                        <outletCollection property="numberButtons" destination="cNl-hK-hOM" collectionClass="NSMutableArray" id="b1j-2k-rwS"/>
+                        <outletCollection property="numberButtons" destination="zIP-yj-USa" collectionClass="NSMutableArray" id="uRJ-ot-atE"/>
+                        <outletCollection property="numberButtons" destination="wla-zZ-3qi" collectionClass="NSMutableArray" id="2OK-E9-SBC"/>
+                        <outletCollection property="operatorButtons" destination="rKK-qU-SYr" collectionClass="NSMutableArray" id="F54-cr-zcS"/>
+                        <outletCollection property="operatorButtons" destination="QAr-4V-zf1" collectionClass="NSMutableArray" id="tOS-ah-GCP"/>
+                        <outletCollection property="operatorButtons" destination="ma4-eF-rIR" collectionClass="NSMutableArray" id="fkJ-Ww-cx0"/>
+                        <outletCollection property="operatorButtons" destination="dH7-qc-wdJ" collectionClass="NSMutableArray" id="5ci-Zb-39r"/>
+                        <outletCollection property="operatorButtons" destination="Dff-9R-7P9" collectionClass="NSMutableArray" id="lp8-R2-vR0"/>
+                        <outletCollection property="otherButtons" destination="rDt-4v-Y4L" collectionClass="NSMutableArray" id="PDn-Hp-p7k"/>
+                        <outletCollection property="otherButtons" destination="0U5-W9-pt7" collectionClass="NSMutableArray" id="1on-kC-1xV"/>
+                        <outletCollection property="otherButtons" destination="nSY-vg-Pka" collectionClass="NSMutableArray" id="3gH-zI-2KT"/>
+                        <outletCollection property="otherButtons" destination="9z1-Ys-Rwd" collectionClass="NSMutableArray" id="W1Y-ca-BIT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kwk-hG-9NW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -617,7 +640,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eM0-OY-Bda">
-                                                        <rect key="frame" x="197" y="0.0" width="197" height="153"/>
+                                                        <rect key="frame" x="197" y="0.0" width="197" height="153.5"/>
                                                     </pickerView>
                                                 </subviews>
                                             </stackView>
@@ -797,7 +820,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="186.5" height="307.5"/>
                                                         <subviews>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLU-nb-Shy">
-                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="308"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="307.5"/>
                                                             </pickerView>
                                                         </subviews>
                                                         <constraints>
@@ -815,7 +838,7 @@
                                                         <rect key="frame" x="227.5" y="0.0" width="186.5" height="307.5"/>
                                                         <subviews>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Luh-5n-Ezd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="186" height="308"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="307.5"/>
                                                             </pickerView>
                                                         </subviews>
                                                         <constraints>
