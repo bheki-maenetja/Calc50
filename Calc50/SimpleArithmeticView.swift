@@ -15,6 +15,10 @@ class SimpleArithmeticView: UIViewController {
     @IBOutlet var operatorButtons: [UIButton]!
     @IBOutlet var otherButtons: [UIButton]!
     
+    var firstNumber : Float = 0
+    var secondNumber : Float = 0
+    var currentOperator : Character = "c"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,43 @@ class SimpleArithmeticView: UIViewController {
         let buttonSymbol = String(sender.title(for: .normal)!)
         if numberButtons.contains(sender) {
             answerText.text = "\(String(answerText.text!))\(buttonSymbol)"
+        } else if operatorButtons.contains(sender) && buttonSymbol != "=" {
+            resetOperatorButtons()
+            sender.backgroundColor = .systemYellow
+        } else if buttonSymbol == "Clear" {
+            firstNumber = 0
+            secondNumber = 0
+            answerText.text = ""
+            resetOperatorButtons()
+        }
+    }
+    
+    func calculate(currentOperator : Character, firstNumber : Float, secondNumber : Float) -> Float {
+        switch currentOperator {
+        case "+":
+            return firstNumber + secondNumber
+        case "-":
+            return firstNumber - secondNumber
+        case "x":
+            if secondNumber > 0 {
+                return firstNumber * secondNumber
+            } else {
+                return firstNumber * firstNumber
+            }
+        case "÷":
+            if secondNumber > 0 {
+                return firstNumber / secondNumber
+            } else {
+                return firstNumber / firstNumber
+            }
+        default:
+            return -1
+        }
+    }
+    
+    func resetOperatorButtons() {
+        for button in operatorButtons {
+            button.backgroundColor = .systemRed
         }
     }
     
