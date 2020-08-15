@@ -11,7 +11,6 @@ import UIKit
 class SimpleArithmeticView: UIViewController {
 
     @IBOutlet weak var answerText: UILabel!
-    @IBOutlet weak var expressionText: UILabel!
     @IBOutlet var numberButtons: [UIButton]!
     @IBOutlet var operatorButtons: [UIButton]!
     @IBOutlet var otherButtons: [UIButton]!
@@ -20,7 +19,6 @@ class SimpleArithmeticView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         answerText.text = ""
-        expressionText.text = ""
         // Do any additional setup after loading the view.
     }
     
@@ -28,12 +26,6 @@ class SimpleArithmeticView: UIViewController {
         let buttonSymbol = String(sender.title(for: .normal)!)
         if numberButtons.contains(sender) {
             answerText.text = "\(String(answerText.text!))\(buttonSymbol)"
-            expressionText.text = "\(String(expressionText.text!))\(buttonSymbol)"
-        } else if operatorButtons.contains(sender) && buttonSymbol != "=" {
-            expressionText.text = "\(String(expressionText.text!))\(buttonSymbol)"
-        } else if buttonSymbol == "Clear" {
-            answerText.text = ""
-            expressionText.text = ""
         }
     }
     

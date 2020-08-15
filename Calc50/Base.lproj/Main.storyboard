@@ -65,16 +65,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbu-zp-LvS">
-                                                <rect key="frame" x="8" y="8" width="59.5" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Cbu-zp-LvS" firstAttribute="leading" secondItem="EXz-aq-mqZ" secondAttribute="leading" constant="8" id="42X-Wh-8dP"/>
-                                            <constraint firstItem="Cbu-zp-LvS" firstAttribute="top" secondItem="EXz-aq-mqZ" secondAttribute="top" constant="8" id="ASV-Iq-0QT"/>
                                             <constraint firstAttribute="bottom" secondItem="cAR-mo-IZi" secondAttribute="bottom" constant="8" id="HGF-1T-Tfg"/>
                                             <constraint firstAttribute="trailing" secondItem="cAR-mo-IZi" secondAttribute="trailing" constant="8" id="qne-W8-fRq"/>
                                         </constraints>
@@ -352,7 +344,6 @@
                     <navigationItem key="navigationItem" id="5jN-Eb-iNq"/>
                     <connections>
                         <outlet property="answerText" destination="cAR-mo-IZi" id="3dJ-IB-IXe"/>
-                        <outlet property="expressionText" destination="Cbu-zp-LvS" id="Smy-Ya-SdH"/>
                         <outletCollection property="numberButtons" destination="uzb-Fi-JLh" collectionClass="NSMutableArray" id="bdw-u3-dFa"/>
                         <outletCollection property="numberButtons" destination="Twd-7W-OXP" collectionClass="NSMutableArray" id="8aP-Qf-aYY"/>
                         <outletCollection property="numberButtons" destination="8ef-VX-Q07" collectionClass="NSMutableArray" id="bSl-ux-shm"/>
