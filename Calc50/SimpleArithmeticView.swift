@@ -15,10 +15,9 @@ class SimpleArithmeticView: UIViewController {
     @IBOutlet var operatorButtons: [UIButton]!
     @IBOutlet var otherButtons: [UIButton]!
     
-    var firstNumber : Float = 0
-    var secondNumber : Float = 0
-    var currentOperator : Character = "c"
-    
+    var firstNumber : Float? = nil
+    var secondNumber : Float? = nil
+    var currentOperator : Character = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +27,16 @@ class SimpleArithmeticView: UIViewController {
     
     @IBAction func buttonTap(_ sender: UIButton) {
         let buttonSymbol = String(sender.title(for: .normal)!)
-        if numberButtons.contains(sender) {
-            answerText.text = "\(String(answerText.text!))\(buttonSymbol)"
+        if numberButtons.contains(sender) || buttonSymbol == "." {
+            if !(answerText.text?.contains("."))! || buttonSymbol != "." {
+                answerText.text = "\(String(answerText.text!))\(buttonSymbol)"
+            }
         } else if operatorButtons.contains(sender) && buttonSymbol != "=" {
+            if !(firstNumber != nil) {
+                setNumber(text: answerText.text!, numChoice: 1)
+            } else {
+                setNumber(text: answerText.text!, numChoice: 2)
+            }
             resetOperatorButtons()
             sender.backgroundColor = .systemYellow
         } else if buttonSymbol == "Clear" {
@@ -61,6 +67,15 @@ class SimpleArithmeticView: UIViewController {
             }
         default:
             return -1
+        }
+    }
+    
+    func setNumber(text : String, numChoice : Int) {
+        let newNum = Float(text)
+        if numChoice == 1 {
+            firstNumber = newNum!
+        } else if numChoice == 2 {
+            secondNumber = newNum!
         }
     }
     
