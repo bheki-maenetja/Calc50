@@ -27,14 +27,13 @@ class SimpleArithmeticView: UIViewController {
     }
     
     @IBAction func buttonTap(_ sender: UIButton) {
-        if firstNumber != nil {
-            answerText.text = ""
-        }
+//        if firstNumber != nil {
+//            answerText.text = ""
+//        }
         let buttonSymbol = String(sender.title(for: .normal)!)
-        numberText = answerText.text!
         if numberButtons.contains(sender) || buttonSymbol == "." {
             if !(numberText.contains(".")) || buttonSymbol != "." {
-                answerText.text = "\(String(numberText))\(buttonSymbol)"
+                numberText = "\(numberText)\(buttonSymbol)"
             }
         } else if operatorButtons.contains(sender) && buttonSymbol != "=" {
             if !(firstNumber != nil) {
@@ -49,9 +48,10 @@ class SimpleArithmeticView: UIViewController {
         } else if buttonSymbol == "Clear" {
             firstNumber = 0
             secondNumber = 0
-            answerText.text = ""
+            numberText = ""
             resetOperatorButtons()
         }
+        answerText.text = numberText
     }
     
     func calculate(currentOperator : Character, firstNumber : Float, secondNumber : Float) -> Float {
