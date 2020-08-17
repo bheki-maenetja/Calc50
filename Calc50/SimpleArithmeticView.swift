@@ -31,11 +31,12 @@ class SimpleArithmeticView: UIViewController {
 //            answerText.text = ""
 //        }
         let buttonSymbol = String(sender.title(for: .normal)!)
-        if numberButtons.contains(sender) || buttonSymbol == "." {
+        switch buttonSymbol {
+        case ".", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
             if !(numberText.contains(".")) || buttonSymbol != "." {
                 numberText = "\(numberText)\(buttonSymbol)"
             }
-        } else if operatorButtons.contains(sender) && buttonSymbol != "=" {
+        case "+", "-", "x", "÷":
             if !(firstNumber != nil) {
                 setNumber(text: numberText, numChoice: 1)
                 print("First Number: \(firstNumber), Second Number: \(secondNumber)")
@@ -45,12 +46,21 @@ class SimpleArithmeticView: UIViewController {
             }
             resetOperatorButtons()
             sender.backgroundColor = .systemYellow
-        } else if buttonSymbol == "Clear" {
+        case "Clear":
             firstNumber = 0
             secondNumber = 0
             numberText = ""
             resetOperatorButtons()
+        default:
+            print("Nothing...")
         }
+//        if numberButtons.contains(sender) || buttonSymbol == "." {
+//
+//        } else if operatorButtons.contains(sender) && buttonSymbol != "=" {
+//
+//        } else if buttonSymbol == "Clear" {
+//
+//        }
         answerText.text = numberText
     }
     
