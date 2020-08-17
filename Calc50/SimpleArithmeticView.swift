@@ -17,7 +17,7 @@ class SimpleArithmeticView: UIViewController {
     
     var firstNumber : Float? = nil
     var secondNumber : Float? = nil
-    var currentOperator : Character = "0"
+    var currentOperator : String = ""
     var numberText : String = ""
     
     override func viewDidLoad() {
@@ -38,15 +38,23 @@ class SimpleArithmeticView: UIViewController {
                 numberText = "\(numberText)\(buttonSymbol)"
             }
         case "+", "-", "x", "÷":
+            print("Current operator: \(buttonSymbol)")
             resetOperatorButtons()
             sender.backgroundColor = .systemYellow
             if !(firstNumber != nil) {
                 setNumber(text: numberText, numChoice: 1)
                 answerText.text = numberText
                 numberText = ""
+                currentOperator = buttonSymbol
                 return
             } else {
                 setNumber(text: numberText, numChoice: 2)
+                firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: secondNumber!)
+                secondNumber = nil
+                answerText.text = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
+                numberText = ""
+                currentOperator = buttonSymbol
+                return
             }
         case "Clear":
             firstNumber = nil
@@ -60,7 +68,7 @@ class SimpleArithmeticView: UIViewController {
         answerText.text = numberText
     }
     
-    func calculate(currentOperator : Character, firstNumber : Float, secondNumber : Float) -> Float {
+    func calculate(currentOperator : String, firstNumber : Float, secondNumber : Float) -> Float {
         switch currentOperator {
         case "+":
             return firstNumber + secondNumber
