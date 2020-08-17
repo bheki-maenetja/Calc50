@@ -38,7 +38,6 @@ class SimpleArithmeticView: UIViewController {
                 numberText = "\(numberText)\(buttonSymbol)"
             }
         case "+", "-", "x", "÷":
-            print("Current operator: \(buttonSymbol)")
             resetOperatorButtons()
             sender.backgroundColor = .systemYellow
             if !(firstNumber != nil) {
