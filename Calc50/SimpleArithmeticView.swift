@@ -40,7 +40,7 @@ class SimpleArithmeticView: UIViewController {
         case "+", "-", "x", "÷":
             resetOperatorButtons()
             sender.backgroundColor = .systemYellow
-            if !(firstNumber != nil) {
+            if firstNumber == nil {
                 setNumber(text: numberText, numChoice: 1)
                 answerText.text = numberText
                 numberText = ""
@@ -55,6 +55,9 @@ class SimpleArithmeticView: UIViewController {
                 currentOperator = buttonSymbol
                 return
             }
+        case "=":
+            resetOperatorButtons()
+            sender.backgroundColor = .systemBlue
         case "Clear":
             firstNumber = nil
             secondNumber = nil
@@ -86,7 +89,7 @@ class SimpleArithmeticView: UIViewController {
                 return firstNumber / firstNumber
             }
         default:
-            return -1
+            return firstNumber
         }
     }
     
