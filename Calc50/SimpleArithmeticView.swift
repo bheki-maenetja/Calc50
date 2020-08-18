@@ -89,8 +89,6 @@ class SimpleArithmeticView: UIViewController {
                 currentOperator = ""
                 secondNumber = nil
             }
-            print(numberText)
-            print("First Number: \(firstNumber), Second Number: \(secondNumber)")
         case "Clear":
             firstNumber = nil
             secondNumber = nil
