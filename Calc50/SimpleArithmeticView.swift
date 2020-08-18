@@ -67,9 +67,9 @@ class SimpleArithmeticView: UIViewController {
                 firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: secondNumber!)
                 answerText.text = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
                 numberText = ""
-                currentOperator = ""
                 return
             } else if firstNumber != nil && currentOperator != "" {
+                secondNumber = firstNumber
                 firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: firstNumber!)
                 answerText.text = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
                 numberText = ""
@@ -112,7 +112,7 @@ class SimpleArithmeticView: UIViewController {
     
     func setNumber(text : String, numChoice : Int) {
         if text != "" {
-            let newNum = Float(text)
+            let newNum = text == "." ? 0.0 : Float(text)
             if numChoice == 1 {
                 firstNumber = newNum!
             } else if numChoice == 2 {
