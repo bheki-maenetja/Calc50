@@ -69,15 +69,26 @@ class SimpleArithmeticView: UIViewController {
                 return
             } else if firstNumber != nil && currentOperator != "" {
                 secondNumber = firstNumber
-                firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: firstNumber!)
+                firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: secondNumber!)
                 answerText.text = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
                 numberText = ""
                 return
+            }
+        case "+/-":
+            if firstNumber == nil && numberText != "" {
+                setNumber(text: numberText, numChoice: 1)
+                firstNumber = firstNumber != 0.0 ? -firstNumber! : 0.0
+                numberText = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
+            } else if firstNumber != nil && numberText != "" {
+                setNumber(text: numberText, numChoice: 2)
+                secondNumber = secondNumber != 0.0 ? -secondNumber! : 0.0
+                numberText = secondNumber! - Float(Int(secondNumber!)) == 0.0 ? "\(Int(secondNumber!))" : "\(secondNumber!)"
             }
         case "Clear":
             firstNumber = nil
             secondNumber = nil
             numberText = ""
+            currentOperator = ""
             resetOperatorButtons()
         default:
             print("Nothing...")
@@ -93,7 +104,7 @@ class SimpleArithmeticView: UIViewController {
         case "-":
             return firstNumber - secondNumber
         case "x":
-            if secondNumber > 0 {
+            if secondNumber != nil {
                 return firstNumber * secondNumber
             } else {
                 return firstNumber * firstNumber
