@@ -59,7 +59,6 @@ class SimpleArithmeticView: UIViewController {
             }
         case "=":
             resetOperatorButtons()
-            sender.backgroundColor = .systemOrange
             if firstNumber != nil && numberText != "" {
                 setNumber(text: numberText, numChoice: 2)
             }
