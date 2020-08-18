@@ -64,9 +64,16 @@ class SimpleArithmeticView: UIViewController {
                 setNumber(text: numberText, numChoice: 2)
             }
             if firstNumber != nil && secondNumber != nil {
-                print("Operating on two numbers...")
-            } else if firstNumber != nil && currentOperator != nil {
-                print("Operating on one number...")
+                firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: secondNumber!)
+                answerText.text = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
+                numberText = ""
+                currentOperator = ""
+                return
+            } else if firstNumber != nil && currentOperator != "" {
+                firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: firstNumber!)
+                answerText.text = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
+                numberText = ""
+                return
             }
         case "Clear":
             firstNumber = nil
