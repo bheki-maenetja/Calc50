@@ -57,7 +57,15 @@ class SimpleArithmeticView: UIViewController {
             }
         case "=":
             resetOperatorButtons()
-            sender.backgroundColor = .systemBlue
+            sender.backgroundColor = .systemOrange
+            if firstNumber != nil && numberText != "" {
+                setNumber(text: numberText, numChoice: 2)
+            }
+            if firstNumber != nil && secondNumber != nil {
+                print("Operating on two numbers...")
+            } else if firstNumber != nil && currentOperator != nil {
+                print("Operating on one number...")
+            }
         case "Clear":
             firstNumber = nil
             secondNumber = nil
@@ -94,11 +102,13 @@ class SimpleArithmeticView: UIViewController {
     }
     
     func setNumber(text : String, numChoice : Int) {
-        let newNum = Float(text)
-        if numChoice == 1 {
-            firstNumber = newNum!
-        } else if numChoice == 2 {
-            secondNumber = newNum!
+        if text != "" {
+            let newNum = Float(text)
+            if numChoice == 1 {
+                firstNumber = newNum!
+            } else if numChoice == 2 {
+                secondNumber = newNum!
+            }
         }
     }
     
