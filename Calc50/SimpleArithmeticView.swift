@@ -47,8 +47,10 @@ class SimpleArithmeticView: UIViewController {
                 currentOperator = buttonSymbol
                 return
             } else {
-                setNumber(text: numberText, numChoice: 2)
-                firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: secondNumber!)
+                if numberText != "" {
+                    setNumber(text: numberText, numChoice: 2)
+                    firstNumber = calculate(currentOperator: currentOperator, firstNumber: firstNumber!, secondNumber: secondNumber!)
+                }
                 secondNumber = nil
                 answerText.text = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
                 numberText = ""
