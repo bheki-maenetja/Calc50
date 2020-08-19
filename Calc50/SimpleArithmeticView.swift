@@ -89,6 +89,21 @@ class SimpleArithmeticView: UIViewController {
                 currentOperator = ""
                 secondNumber = nil
             }
+        case "%":
+            if firstNumber == nil && numberText != "" {
+                setNumber(text: numberText, numChoice: 1)
+                firstNumber = firstNumber != 0.0 ? 0.01 * firstNumber! : 0.0
+                numberText = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
+            } else if firstNumber != nil && numberText != "" {
+                setNumber(text: numberText, numChoice: 2)
+                secondNumber = secondNumber != 0.0 ? 0.01 * secondNumber! : 0.0
+                numberText = secondNumber! - Float(Int(secondNumber!)) == 0.0 ? "\(Int(secondNumber!))" : "\(secondNumber!)"
+            } else if firstNumber != nil {
+                firstNumber = firstNumber != 0.0 ? 0.01 * firstNumber! : 0.0
+                numberText = firstNumber! - Float(Int(firstNumber!)) == 0.0 ? "\(Int(firstNumber!))" : "\(firstNumber!)"
+                currentOperator = ""
+                secondNumber = nil
+            }
         case "Clear":
             firstNumber = nil
             secondNumber = nil
