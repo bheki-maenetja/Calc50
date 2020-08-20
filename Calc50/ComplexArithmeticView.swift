@@ -18,6 +18,7 @@ class ComplexArithmeticView: UIViewController {
         answerText.text = ""
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func setValue(_ sender: Any) {
         textField.endEditing(true)
     }
