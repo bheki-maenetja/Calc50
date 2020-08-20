@@ -400,7 +400,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8K-ee-fny">
                                         <rect key="frame" x="0.0" y="115.5" width="414" height="115"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mR3-mt-GB3">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a number" textAlignment="natural" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="mR3-mt-GB3">
                                                 <rect key="frame" x="10" y="40.5" width="394" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -411,10 +411,19 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-1R-S6e">
+                                                <rect key="frame" x="174.5" y="77" width="65" height="30"/>
+                                                <state key="normal" title="Set Value"/>
+                                                <connections>
+                                                    <action selector="setValue:" destination="Ib8-eg-EMH" eventType="touchUpInside" id="pJl-Xw-2DL"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="mD9-1R-S6e" firstAttribute="centerX" secondItem="z8K-ee-fny" secondAttribute="centerX" id="Cqt-vw-XIN"/>
                                             <constraint firstItem="Eyg-u7-dn8" firstAttribute="centerX" secondItem="z8K-ee-fny" secondAttribute="centerX" id="Ija-HO-bTE"/>
+                                            <constraint firstItem="mD9-1R-S6e" firstAttribute="top" secondItem="mR3-mt-GB3" secondAttribute="bottom" constant="2.5" id="Vjv-lh-bnt"/>
                                             <constraint firstItem="mR3-mt-GB3" firstAttribute="centerY" secondItem="z8K-ee-fny" secondAttribute="centerY" id="hvC-Z8-07j"/>
                                             <constraint firstItem="mR3-mt-GB3" firstAttribute="top" secondItem="Eyg-u7-dn8" secondAttribute="bottom" constant="6.5" id="pr3-Mu-NPw"/>
                                             <constraint firstAttribute="trailing" secondItem="mR3-mt-GB3" secondAttribute="trailing" constant="10" id="rVH-a1-Bjr"/>
