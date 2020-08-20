@@ -15,8 +15,15 @@ class ComplexArithmeticView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        answerText.text = ""
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func buttonTap(_ sender: UIButton) {
+        let buttonSymbol = String(sender.title(for: .normal)!)
+        print(buttonSymbol)
+    }
+    
     
 
     /*
