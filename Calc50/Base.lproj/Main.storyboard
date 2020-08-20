@@ -403,7 +403,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mR3-mt-GB3">
                                                 <rect key="frame" x="10" y="40.5" width="394" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="cc-number"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyg-u7-dn8">
                                                 <rect key="frame" x="138" y="4" width="138" height="30"/>
@@ -641,6 +641,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Advanced" image="list.number" catalog="system" id="Yak-D9-w9i"/>
                     <navigationItem key="navigationItem" id="nfc-qv-P5s"/>
+                    <connections>
+                        <outlet property="answerText" destination="9pC-8Q-5Ay" id="7Cg-WV-5iG"/>
+                        <outlet property="textField" destination="mR3-mt-GB3" id="0y4-j2-L9u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boj-xz-q34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
