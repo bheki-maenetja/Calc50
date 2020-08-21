@@ -46,12 +46,17 @@ class ComplexArithmeticView: UIViewController {
     
     @IBAction func buttonTap(_ sender: UIButton) {
         let buttonSymbol = String(sender.title(for: .normal)!)
-        if !textField.isEditing && numberText != "" {
+        if !textField.isEditing && numberText != "" && numberText != "Error" {
             print(buttonSymbol)
             mainNumber = calculateValue(operatorSymbol: buttonSymbol)
-            print(mainNumber)
-            numberText = mainNumber! - Float(Int(mainNumber!)) == 0.0 ? "\(Int(mainNumber!))" : "\(mainNumber!)"
-            answerText.text = numberText
+            if mainNumber!.isNaN || mainNumber!.isInfinite {
+                numberText = "Error"
+                answerText.text = numberText
+                mainNumber = nil
+            } else {
+                numberText = mainNumber! - Float(Int(mainNumber!)) == 0.0 ? "\(Int(mainNumber!))" : "\(mainNumber!)"
+                answerText.text = numberText
+            }
         }
     }
     
