@@ -49,6 +49,7 @@ class ComplexArithmeticView: UIViewController {
         if !textField.isEditing && numberText != "" {
             print(buttonSymbol)
             mainNumber = calculateValue(operatorSymbol: buttonSymbol)
+            print(mainNumber)
             numberText = mainNumber! - Float(Int(mainNumber!)) == 0.0 ? "\(Int(mainNumber!))" : "\(mainNumber!)"
             answerText.text = numberText
         }
@@ -64,10 +65,10 @@ class ComplexArithmeticView: UIViewController {
             return 1 / mainNumber!
         case "rad":
             print("Radians incoming...")
-            return rad2deg(mainNumber!)
+            return deg2rad(mainNumber!)
         case "deg":
             print("Degrees incoming...")
-            return deg2rad(mainNumber!)
+            return rad2deg(mainNumber!)
         case "x²":
             print("Squares incoming...")
             return pow(mainNumber!, 2)
