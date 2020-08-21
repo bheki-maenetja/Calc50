@@ -13,6 +13,9 @@ class ComplexArithmeticView: UIViewController {
     @IBOutlet weak var answerText: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    var mainNumber: Float? = nil
+    var numberText: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         answerText.text = ""
