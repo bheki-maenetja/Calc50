@@ -47,7 +47,26 @@ class ComplexArithmeticView: UIViewController {
     @IBAction func buttonTap(_ sender: UIButton) {
         let buttonSymbol = String(sender.title(for: .normal)!)
         if !textField.isEditing && numberText != "" {
-            print(buttonSymbol)
+            calculateValue(operatorSymbol: buttonSymbol)
+        }
+    }
+    
+    func calculateValue(operatorSymbol : String) -> Float {
+        switch operatorSymbol {
+        case "Abs":
+            print("Abosolute value incoming...")
+            return -1
+        case "n!":
+            print("Factorial incoming...")
+            return -1
+        case "rad":
+            print("Radians incoming...")
+            return -1
+        case "deg":
+            print("Degrees incoming...")
+            return -1
+        default:
+            return -1
         }
     }
     
