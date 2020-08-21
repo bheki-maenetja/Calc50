@@ -48,7 +48,9 @@ class ComplexArithmeticView: UIViewController {
         let buttonSymbol = String(sender.title(for: .normal)!)
         if !textField.isEditing && numberText != "" {
             print(buttonSymbol)
-            calculateValue(operatorSymbol: buttonSymbol)
+            mainNumber = calculateValue(operatorSymbol: buttonSymbol)
+            numberText = mainNumber! - Float(Int(mainNumber!)) == 0.0 ? "\(Int(mainNumber!))" : "\(mainNumber!)"
+            answerText.text = numberText
         }
     }
     
@@ -56,69 +58,76 @@ class ComplexArithmeticView: UIViewController {
         switch operatorSymbol {
         case "Abs":
             print("Abosolute value incoming...")
-            return -1
-        case "n!":
-            print("Factorial incoming...")
-            return -1
+            return abs(mainNumber!)
+        case "1/x":
+            print("Reciporacal incoming...")
+            return 1 / mainNumber!
         case "rad":
             print("Radians incoming...")
-            return -1
+            return rad2deg(mainNumber!)
         case "deg":
             print("Degrees incoming...")
-            return -1
+            return deg2rad(mainNumber!)
         case "x²":
             print("Squares incoming...")
-            return -1
+            return pow(mainNumber!, 2)
         case "x³":
             print("Cubes incoming...")
-            return -1
+            return pow(mainNumber!, 3)
         case "√x":
             print("Square roots incoming...")
-            return -1
+            return sqrt(mainNumber!)
         case "∛x":
             print("Cube roots incoming...")
-            return -1
-        case "n√x":
-            print("Nth root incoming...")
-            return -1
+            return pow(mainNumber!, 1/3)
+        case "%":
+            print("Percent incoming...")
+            return 0.01 * mainNumber!
         case "sin":
             print("Sin incoming...")
-            return -1
+            return sin(mainNumber!)
         case "cos":
             print("Cos incoming...")
-            return -1
+            return cos(mainNumber!)
         case "tan":
             print("Tangent incoming...")
-            return -1
+            return tan(mainNumber!)
         case "arcsin":
             print("Arc sin ... incoming")
-            return -1
+            return asin(mainNumber!)
         case "arccos":
             print("Arc cos ... incoming")
-            return -1
+            return acos(mainNumber!)
         case "arctan":
             print("Arc tan ... incoming")
-            return -1
+            return atan(mainNumber!)
         case "cosec":
             print("Cosecant ... incoming")
-            return -1
+            return 1 / sin(mainNumber!)
         case "sec":
             print("Secant ... incoming")
-            return -1
+            return 1 / cos(mainNumber!)
         case "cot":
             print("Cotangent ... incoming")
-            return -1
+            return 1 / tan(mainNumber!)
         case "log":
             print("Logarithm ... incoming")
-            return -1
+            return log10(mainNumber!)
         case "ln":
             print("Natural logarithm ... incoming")
-            return -1
+            return log(mainNumber!)
         default:
             return -1
         }
     }
     
+    func deg2rad(_ number: Float) -> Float {
+        return number * .pi / 180
+    }
+    
+    func rad2deg(_ number: Float) -> Float {
+        return (number / .pi) * 180
+    }
     /*
     // MARK: - Navigation
 
