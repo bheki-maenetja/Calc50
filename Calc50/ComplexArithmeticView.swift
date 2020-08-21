@@ -47,6 +47,7 @@ class ComplexArithmeticView: UIViewController {
     @IBAction func buttonTap(_ sender: UIButton) {
         let buttonSymbol = String(sender.title(for: .normal)!)
         if !textField.isEditing && numberText != "" {
+            print(buttonSymbol)
             calculateValue(operatorSymbol: buttonSymbol)
         }
     }
@@ -64,6 +65,54 @@ class ComplexArithmeticView: UIViewController {
             return -1
         case "deg":
             print("Degrees incoming...")
+            return -1
+        case "x²":
+            print("Squares incoming...")
+            return -1
+        case "x³":
+            print("Cubes incoming...")
+            return -1
+        case "√x":
+            print("Square roots incoming...")
+            return -1
+        case "∛x":
+            print("Cube roots incoming...")
+            return -1
+        case "n√x":
+            print("Nth root incoming...")
+            return -1
+        case "sin":
+            print("Sin incoming...")
+            return -1
+        case "cos":
+            print("Cos incoming...")
+            return -1
+        case "tan":
+            print("Tangent incoming...")
+            return -1
+        case "arcsin":
+            print("Arc sin ... incoming")
+            return -1
+        case "arccos":
+            print("Arc cos ... incoming")
+            return -1
+        case "arctan":
+            print("Arc tan ... incoming")
+            return -1
+        case "cosec":
+            print("Cosecant ... incoming")
+            return -1
+        case "sec":
+            print("Secant ... incoming")
+            return -1
+        case "cot":
+            print("Cotangent ... incoming")
+            return -1
+        case "log":
+            print("Logarithm ... incoming")
+            return -1
+        case "ln":
+            print("Natural logarithm ... incoming")
             return -1
         default:
             return -1
