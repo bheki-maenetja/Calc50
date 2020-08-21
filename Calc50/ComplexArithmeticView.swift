@@ -21,7 +21,13 @@ class ComplexArithmeticView: UIViewController {
     
     @IBAction func textFieldAction(_ sender: UITextField) {
         var textFieldText = String(textField.text!)
-        print(textFieldText)
+        if textFieldText == "" {
+            return
+        }
+        if textFieldText.components(separatedBy: ".").count > 2 {
+            textFieldText.remove(at: textFieldText.lastIndex(of: ".")!)
+        }
+        textField.text = textFieldText
     }
     
     @IBAction func setValue(_ sender: Any) {
