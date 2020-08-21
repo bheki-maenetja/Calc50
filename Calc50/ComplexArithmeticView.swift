@@ -30,18 +30,23 @@ class ComplexArithmeticView: UIViewController {
         if textFieldText.components(separatedBy: ".").count > 2 {
             textFieldText.remove(at: textFieldText.lastIndex(of: ".")!)
         }
-        numberText = textFieldText
-        textField.text = numberText
+        textField.text = textFieldText
     }
     
     @IBAction func setValue(_ sender: Any) {
         textField.endEditing(true)
+        if textField.text == "" {
+            numberText = ""
+        } else {
+            mainNumber = Float(textField.text!)
+            numberText = mainNumber! - Float(Int(mainNumber!)) == 0.0 ? "\(Int(mainNumber!))" : "\(mainNumber!)"
+        }
         answerText.text = numberText
     }
     
     @IBAction func buttonTap(_ sender: UIButton) {
         let buttonSymbol = String(sender.title(for: .normal)!)
-        if !textField.isEditing {
+        if !textField.isEditing && numberText != "" {
             print(buttonSymbol)
         }
     }
