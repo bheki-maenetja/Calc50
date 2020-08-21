@@ -19,6 +19,11 @@ class ComplexArithmeticView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func textFieldAction(_ sender: UITextField) {
+        var textFieldText = String(textField.text!)
+        print(textFieldText)
+    }
+    
     @IBAction func setValue(_ sender: Any) {
         textField.endEditing(true)
     }
@@ -30,8 +35,6 @@ class ComplexArithmeticView: UIViewController {
         }
     }
     
-    
-
     /*
     // MARK: - Navigation
 

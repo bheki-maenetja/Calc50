@@ -404,6 +404,9 @@
                                                 <rect key="frame" x="10" y="40.5" width="394" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <connections>
+                                                    <action selector="textFieldAction:" destination="Ib8-eg-EMH" eventType="editingChanged" id="Umq-JZ-BAw"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyg-u7-dn8">
                                                 <rect key="frame" x="138" y="4" width="138" height="30"/>
