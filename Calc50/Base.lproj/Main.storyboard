@@ -836,6 +836,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Date Calculator" image="calendar" catalog="system" id="ZHH-RX-aB1"/>
                     <navigationItem key="navigationItem" id="HR0-dV-98c"/>
+                    <connections>
+                        <outlet property="answerText" destination="RbE-s3-hqe" id="UXd-7Z-nmo"/>
+                        <outlet property="firstDatePicker" destination="d0A-vc-hvY" id="V9d-Uy-LJr"/>
+                        <outlet property="secondDatePicker" destination="Efd-ic-5rx" id="TkA-mr-tvo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IrM-L2-A0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

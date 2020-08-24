@@ -10,6 +10,10 @@ import UIKit
 
 class DateCalculatorView: UIViewController {
 
+    @IBOutlet weak var answerText: UILabel!
+    @IBOutlet weak var firstDatePicker: UIDatePicker!
+    @IBOutlet weak var secondDatePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
