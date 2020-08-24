@@ -21,25 +21,56 @@ class DateCalculatorView: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self
         secondDatePicker.minimumDate = firstDatePicker.date
+        setDateInterval()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func firstDateAction(_ sender: UIDatePicker) {
         secondDatePicker.minimumDate = firstDatePicker.date
-        calculateDateInterval()
+        setDateInterval()
     }
     
     @IBAction func secondDateAction(_ sender: UIDatePicker) {
-        calculateDateInterval()
+        setDateInterval()
     }
     
-    func calculateDateInterval() {
-        let timeInterval = Calendar.current.dateComponents([.second], from: firstDatePicker.date, to: secondDatePicker.date)
-        print("Seconds:", Int(timeInterval.second!))
+    func setDateInterval() {
+        let dateInterval = calculateDateInterval(category: pickerViewData[categoryPicker.selectedRow(inComponent: 0)])
+        answerText.text = dateInterval >= 0 ? "\(dateInterval)" : "0"
+    }
+    
+    func calculateDateInterval(category : String) -> Int {
+        switch category {
+        case "seconds":
+            let timeInterval = Calendar.current.dateComponents([.second], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.second!)
+        case "minutes":
+            let timeInterval = Calendar.current.dateComponents([.minute], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.minute!)
+        case "hours":
+            let timeInterval = Calendar.current.dateComponents([.hour], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.hour!)
+        case "days":
+            let timeInterval = Calendar.current.dateComponents([.day], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.second!)
+        case "months":
+            let timeInterval = Calendar.current.dateComponents([.month], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.month!)
+        case "years":
+            let timeInterval = Calendar.current.dateComponents([.year], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.year!)
+        default:
+            return -1
+        }
+        
 //        print("Minutes:", timeInterval.minute)
 //        print("Hours:", timeInterval.hour)
 //        print("Days:", timeInterval.day)
 //        print("Months:", timeInterval.month)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("Is something happening?", pickerViewData[row])
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
