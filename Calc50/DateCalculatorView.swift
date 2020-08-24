@@ -52,7 +52,7 @@ class DateCalculatorView: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             return Int(timeInterval.hour!)
         case "days":
             let timeInterval = Calendar.current.dateComponents([.day], from: firstDatePicker.date, to: secondDatePicker.date)
-            return Int(timeInterval.second!)
+            return Int(timeInterval.day!)
         case "months":
             let timeInterval = Calendar.current.dateComponents([.month], from: firstDatePicker.date, to: secondDatePicker.date)
             return Int(timeInterval.month!)
@@ -62,15 +62,10 @@ class DateCalculatorView: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         default:
             return -1
         }
-        
-//        print("Minutes:", timeInterval.minute)
-//        print("Hours:", timeInterval.hour)
-//        print("Days:", timeInterval.day)
-//        print("Months:", timeInterval.month)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("Is something happening?", pickerViewData[row])
+        setDateInterval()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
