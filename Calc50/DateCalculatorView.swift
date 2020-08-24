@@ -16,10 +16,28 @@ class DateCalculatorView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        secondDatePicker.minimumDate = firstDatePicker.date
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func firstDateAction(_ sender: UIDatePicker) {
+        secondDatePicker.minimumDate = firstDatePicker.date
+        calculateDateInterval()
+    }
+    
+    @IBAction func secondDateAction(_ sender: UIDatePicker) {
+        calculateDateInterval()
+    }
+    
+    func calculateDateInterval() {
+        let timeInterval = Calendar.current.dateComponents([.second], from: firstDatePicker.date, to: secondDatePicker.date)
+        print("Seconds:", Int(timeInterval.second!))
+//        print("Minutes:", timeInterval.minute)
+//        print("Hours:", timeInterval.hour)
+//        print("Days:", timeInterval.day)
+//        print("Months:", timeInterval.month)
+    }
+    
     /*
     // MARK: - Navigation
 

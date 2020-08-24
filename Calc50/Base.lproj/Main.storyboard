@@ -791,6 +791,9 @@
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="d0A-vc-hvY">
                                                         <rect key="frame" x="0.0" y="22" width="394" height="197.5"/>
+                                                        <connections>
+                                                            <action selector="firstDateAction:" destination="gRH-q5-r2A" eventType="valueChanged" id="Ow0-M3-RVJ"/>
+                                                        </connections>
                                                     </datePicker>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick the second date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-ty-ucg">
                                                         <rect key="frame" x="0.0" y="219.5" width="394" height="22"/>
@@ -800,6 +803,9 @@
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-ic-5rx">
                                                         <rect key="frame" x="0.0" y="241.5" width="394" height="197"/>
+                                                        <connections>
+                                                            <action selector="secondDateAction:" destination="gRH-q5-r2A" eventType="valueChanged" id="SS3-jC-3yQ"/>
+                                                        </connections>
                                                     </datePicker>
                                                 </subviews>
                                                 <constraints>
