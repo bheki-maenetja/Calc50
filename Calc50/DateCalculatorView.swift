@@ -8,14 +8,18 @@
 
 import UIKit
 
-class DateCalculatorView: UIViewController {
-
+class DateCalculatorView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var answerText: UILabel!
+    @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var firstDatePicker: UIDatePicker!
     @IBOutlet weak var secondDatePicker: UIDatePicker!
     
+    var pickerViewData: [String] = ["seconds", "minutes", "hours", "days", "months", "years"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.categoryPicker.delegate = self
+        self.categoryPicker.dataSource = self
         secondDatePicker.minimumDate = firstDatePicker.date
         // Do any additional setup after loading the view.
     }
@@ -36,6 +40,18 @@ class DateCalculatorView: UIViewController {
 //        print("Hours:", timeInterval.hour)
 //        print("Days:", timeInterval.day)
 //        print("Months:", timeInterval.month)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerViewData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerViewData[row]
     }
     
     /*

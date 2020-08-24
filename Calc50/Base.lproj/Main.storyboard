@@ -844,6 +844,7 @@
                     <navigationItem key="navigationItem" id="HR0-dV-98c"/>
                     <connections>
                         <outlet property="answerText" destination="RbE-s3-hqe" id="UXd-7Z-nmo"/>
+                        <outlet property="categoryPicker" destination="eM0-OY-Bda" id="TcY-Qy-f9Y"/>
                         <outlet property="firstDatePicker" destination="d0A-vc-hvY" id="V9d-Uy-LJr"/>
                         <outlet property="secondDatePicker" destination="Efd-ic-5rx" id="TkA-mr-tvo"/>
                     </connections>
