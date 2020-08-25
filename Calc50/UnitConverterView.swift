@@ -16,11 +16,25 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     var unitCategories: [String] = ["Temperature", "Mass", "Force", "Distance", "Time"]
     
+    var units : [String : [String]] = [
+        "Temperature" : ["Celsius", "Kelvin", "Fahrenheit"],
+        "Mass" : ["Kilogram", "Gram", "Tonne", "Ounce", "Milligram"],
+        "Force" : ["Newtom", "Pound", "Kip"],
+        "Distance" : ["Metre", "Yard", "Kilometre", "Mile", "Lightyear"],
+        "Time" : ["Second", "Minute", "Hour", "Day"]
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self
+        
+        self.firstUnitPicker.delegate = self
+        self.firstUnitPicker.dataSource = self
+        
+        self.secondUnitPicker.delegate = self
+        self.secondUnitPicker.dataSource = self
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
