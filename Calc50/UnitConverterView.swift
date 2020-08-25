@@ -40,6 +40,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoryPicker {
             print("Changing category...")
+            firstUnitPicker.reloadAllComponents()
+            secondUnitPicker.reloadAllComponents()
         } else if pickerView == firstUnitPicker {
             print("Changing first unit...")
         } else if pickerView == secondUnitPicker {
