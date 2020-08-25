@@ -1016,6 +1016,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Unit Converter" image="arrow.right.arrow.left.square.fill" catalog="system" id="BRc-Q8-yu1"/>
                     <navigationItem key="navigationItem" id="70P-i3-aKd"/>
+                    <connections>
+                        <outlet property="categoryPicker" destination="got-66-1Gj" id="8IX-tU-CeF"/>
+                        <outlet property="firstUnitPicker" destination="mLU-nb-Shy" id="Fw4-op-ruY"/>
+                        <outlet property="secondUnitPicker" destination="Luh-5n-Ezd" id="1PG-7j-q12"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrz-Tq-ZQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

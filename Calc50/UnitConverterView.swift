@@ -10,9 +10,16 @@ import UIKit
 
 class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
+    @IBOutlet weak var categoryPicker: UIPickerView!
+    @IBOutlet weak var firstUnitPicker: UIPickerView!
+    @IBOutlet weak var secondUnitPicker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        <#code#>
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -20,6 +27,10 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         <#code#>
     }
 
