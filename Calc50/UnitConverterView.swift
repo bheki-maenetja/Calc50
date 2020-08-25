@@ -13,25 +13,40 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var firstUnitPicker: UIPickerView!
     @IBOutlet weak var secondUnitPicker: UIPickerView!
+    
+    var unitCategories: [String] = ["Temperature", "Mass", "Force", "Distance", "Time"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.categoryPicker.delegate = self
+        self.categoryPicker.dataSource = self
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        <#code#>
+        if pickerView == categoryPicker {
+            print("Changing category...")
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        if pickerView == categoryPicker {
+            return unitCategories.count
+        } else {
+            return 1
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        <#code#>
+        if pickerView == categoryPicker {
+            return unitCategories[row]
+        } else {
+            return "something"
+        }
     }
 
 
