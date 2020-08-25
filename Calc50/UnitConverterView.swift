@@ -8,13 +8,21 @@
 
 import UIKit
 
-class UnitConverterView: UIViewController {
-
+class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        <#code#>
+    }
+
 
     /*
     // MARK: - Navigation
