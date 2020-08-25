@@ -40,6 +40,10 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoryPicker {
             print("Changing category...")
+        } else if pickerView == firstUnitPicker {
+            print("Changing first unit...")
+        } else if pickerView == secondUnitPicker {
+            print("Changing second unit...")
         }
     }
     
@@ -51,15 +55,17 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         if pickerView == categoryPicker {
             return unitCategories.count
         } else {
-            return 1
+            return units[unitCategories[categoryPicker.selectedRow(inComponent: 0)]]!.count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == categoryPicker {
             return unitCategories[row]
+        } else if pickerView == firstUnitPicker || pickerView == secondUnitPicker {
+            return units[unitCategories[categoryPicker.selectedRow(inComponent: 0)]]![row]
         } else {
-            return "something"
+            return "Nothing"
         }
     }
 
