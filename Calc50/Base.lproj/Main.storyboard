@@ -896,6 +896,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLc-5e-4et">
                                                 <rect key="frame" x="20" y="101.5" width="374" height="30"/>
                                                 <state key="normal" title="Convert"/>
+                                                <connections>
+                                                    <action selector="convertUnits:" destination="Kp9-1D-Yqe" eventType="touchUpInside" id="ozE-Dh-kTN"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxx-2r-YSn">
                                                 <rect key="frame" x="20" y="27.5" width="374" height="24"/>
@@ -1020,6 +1023,7 @@
                     <tabBarItem key="tabBarItem" title="Unit Converter" image="arrow.right.arrow.left.square.fill" catalog="system" id="BRc-Q8-yu1"/>
                     <navigationItem key="navigationItem" id="70P-i3-aKd"/>
                     <connections>
+                        <outlet property="answerText" destination="9Wb-xq-S6Y" id="34i-us-QEJ"/>
                         <outlet property="categoryPicker" destination="got-66-1Gj" id="8IX-tU-CeF"/>
                         <outlet property="firstUnitPicker" destination="mLU-nb-Shy" id="Fw4-op-ruY"/>
                         <outlet property="secondUnitPicker" destination="Luh-5n-Ezd" id="1PG-7j-q12"/>

@@ -10,10 +10,10 @@ import UIKit
 
 class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
+    @IBOutlet weak var answerText: UILabel!
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var firstUnitPicker: UIPickerView!
     @IBOutlet weak var secondUnitPicker: UIPickerView!
-    
     @IBOutlet weak var textField: UITextField!
     
     var unitCategories: [String] = ["Temperature", "Mass", "Force", "Distance", "Time"]
@@ -41,7 +41,6 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBAction func textFieldAction(_ sender: UITextField) {
         var textFieldText = String(textField.text!)
-        print(textFieldText)
         if textFieldText == "" {
             return
         }
@@ -49,6 +48,9 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             textFieldText.remove(at: textFieldText.lastIndex(of: ".")!)
         }
         textField.text = textFieldText
+    }
+    
+    @IBAction func convertUnits(_ sender: UIButton) {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
