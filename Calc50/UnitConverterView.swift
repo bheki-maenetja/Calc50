@@ -14,6 +14,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var firstUnitPicker: UIPickerView!
     @IBOutlet weak var secondUnitPicker: UIPickerView!
     
+    @IBOutlet weak var textField: UITextField!
+    
     var unitCategories: [String] = ["Temperature", "Mass", "Force", "Distance", "Time"]
     
     var units : [String : [String]] = [
@@ -35,6 +37,9 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
         self.secondUnitPicker.delegate = self
         self.secondUnitPicker.dataSource = self
+    }
+    
+    @IBAction func textFieldAction(_ sender: UITextField) {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
