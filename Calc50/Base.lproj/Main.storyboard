@@ -890,7 +890,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="go"/>
                                                 <connections>
-                                                    <action selector="textFieldAction:" destination="Kp9-1D-Yqe" eventType="valueChanged" id="8Ln-rm-pMF"/>
+                                                    <action selector="textFieldAction:" destination="Kp9-1D-Yqe" eventType="editingChanged" id="WY7-Gk-oxc"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLc-5e-4et">
