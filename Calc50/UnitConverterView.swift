@@ -16,7 +16,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var secondUnitPicker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
     
-    var mainValue : Float? = nil
+    var mainNumber : Float? = nil
     
     var unitCategories: [String] = ["Temperature", "Mass", "Force", "Distance", "Time"]
     
@@ -56,9 +56,9 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBAction func convertUnits(_ sender: UIButton) {
         textField.endEditing(true)
-        mainValue = textField.text != "" ? Float(textField.text!) : nil
-        if mainValue != nil {
-            answerText.text = "\(mainValue!)"
+        mainNumber = textField.text != "" ? Float(textField.text!) : nil
+        if mainNumber != nil {
+            answerText.text = "\(mainNumber!)"
             handleCategory(chosenCategory: unitCategories[categoryPicker.selectedRow(inComponent: 0)])
         } else {
             answerText.text = ""
@@ -69,7 +69,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         switch chosenCategory {
         case "Temperature":
             print("Will convert temperature...")
-            convertTemperature()
+            mainNumber = convertTemperature()
+            answerText.text = "\(mainNumber!)"
         case "Mass":
             print("Will convert mass...")
         case "Force":
@@ -86,8 +87,32 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     func convertTemperature() -> Float {
         let firstUnit = units["Temperature"]![firstUnitPicker.selectedRow(inComponent: 0)]
         let secondUnit = units["Temperature"]![secondUnitPicker.selectedRow(inComponent: 0)]
-        print(firstUnit, secondUnit)
-        return 0.0
+        
+        if firstUnit == secondUnit {
+            return mainNumber!
+        } else {
+            var tempInCelsius : Float? = nil
+            
+            switch firstUnit {
+            case "Celsius":
+                tempInCelsius = mainNumber!
+            case "Kelvin":
+                tempInCelsius = mainNumber! - 273.15
+            case "Fahrenheit":
+                tempInCelsius = 5/9 * (mainNumber! - 32)
+            default:
+                print("Nothing...")
+            }
+            
+            switch secondUnit {
+            case "Kelvin":
+                return tempInCelsius! + 273.15
+            case "Fahrenheit":
+                return (tempInCelsius! * 1.8) + 32
+            default:
+                return -1
+            }
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
