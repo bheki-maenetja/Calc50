@@ -436,6 +436,47 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
+    func convertVolume() -> Float {
+        let firstUnit = units["Volume"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Volume"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        
+        if firstUnit == secondUnit {
+            return mainNumber!
+        } else {
+            var volumeInLitres : Float? = nil
+            
+            switch firstUnit {
+            case "Litre":
+                volumeInLitres = mainNumber!
+            case "Millilitre":
+                volumeInLitres = mainNumber! / 1000
+            case "Gallon":
+                volumeInLitres = mainNumber! * 4.546
+            case "Pint":
+                volumeInLitres = mainNumber! / 1.76
+            case "Cubic Metre":
+                volumeInLitres = mainNumber! * 1000
+            default:
+                print("Nothing...")
+            }
+            
+            switch secondUnit {
+            case "Litre":
+                return volumeInLitres!
+            case "Millilitre":
+                return volumeInLitres! * 1000
+            case "Gallon":
+                return volumeInLitres! / 4.546
+            case "Pint":
+                return volumeInLitres! * 1.76
+            case "Cubic Metre":
+                return volumeInLitres! / 1000
+            default:
+                return -1
+            }
+        }
+    }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoryPicker {
             print("Changing category...")
