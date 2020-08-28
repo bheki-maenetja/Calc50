@@ -88,6 +88,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             answerText.text = "\(mainNumber!)"
         case "Speed":
             print("Will convert speed...")
+            mainNumber = convertSpeed()
+            answerText.text = "\(mainNumber!)"
         case "Temperature":
             print("Will convert temperature...")
             mainNumber = convertTemperature()
@@ -303,6 +305,43 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                 return massInGrams! / pow(10, 6)
             case "Stone":
                 return massInGrams! / 6350
+            default:
+                return -1
+            }
+        }
+    }
+    
+    func convertSpeed() -> Float {
+        let firstUnit = units["Speed"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Speed"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        
+        if firstUnit == secondUnit {
+            return mainNumber!
+        } else {
+            var speedInMPS : Float? = nil
+            
+            switch firstUnit {
+            case "Metres per second":
+                speedInMPS = mainNumber!
+            case "Kilometres per hour":
+                speedInMPS = mainNumber! / 3.6
+            case "Miles per hour":
+                speedInMPS = mainNumber! / 2.237
+            case "Knot":
+                speedInMPS = mainNumber! / 1.944
+            default:
+                print("Nothing...")
+            }
+            
+            switch secondUnit {
+            case "Metres per second":
+                return speedInMPS!
+            case "Kilometres per hour":
+                return speedInMPS! * 3.6
+            case "Miles per hour":
+                return speedInMPS! * 2.237
+            case "Knot":
+                return speedInMPS! * 1.944
             default:
                 return -1
             }
