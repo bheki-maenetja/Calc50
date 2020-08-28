@@ -16,6 +16,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     @IBOutlet weak var secondUnitPicker: UIPickerView!
     @IBOutlet weak var textField: UITextField!
     
+    var mainValue : Float? = nil
+    
     var unitCategories: [String] = ["Temperature", "Mass", "Force", "Distance", "Time"]
     
     var units : [String : [String]] = [
@@ -51,6 +53,9 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     @IBAction func convertUnits(_ sender: UIButton) {
+        textField.endEditing(true)
+        mainValue = textField.text != "" ? Float(textField.text!) : 0
+        answerText.text = "\(mainValue)"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
