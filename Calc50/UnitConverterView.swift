@@ -80,6 +80,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             answerText.text = "\(mainNumber!)"
         case "Length":
             print("Will convert length...")
+            mainNumber = convertLength()
+            answerText.text = "\(mainNumber!)"
         case "Mass":
             print("Will convert mass...")
         case "Speed":
