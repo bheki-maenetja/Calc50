@@ -31,6 +31,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        answerText.text = ""
+        
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self
         
@@ -56,7 +58,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         textField.endEditing(true)
         mainValue = textField.text != "" ? Float(textField.text!) : nil
         if mainValue != nil {
-            answerText.text = "\(mainValue)"
+            answerText.text = "\(mainValue!)"
             handleCategory(chosenCategory: unitCategories[categoryPicker.selectedRow(inComponent: 0)])
         } else {
             answerText.text = ""
@@ -67,6 +69,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         switch chosenCategory {
         case "Temperature":
             print("Will convert temperature...")
+            convertTemperature()
         case "Mass":
             print("Will convert mass...")
         case "Force":
@@ -78,6 +81,13 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         default:
             print("Nothing...")
         }
+    }
+    
+    func convertTemperature() -> Float {
+        let firstUnit = units["Temperature"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Temperature"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        print(firstUnit, secondUnit)
+        return 0.0
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
