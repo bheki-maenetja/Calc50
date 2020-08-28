@@ -195,6 +195,67 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
+    func convertLength() -> Float {
+        let firstUnit = units["Length"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Length"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        
+        if firstUnit == secondUnit {
+            return mainNumber!
+        } else {
+            var lengthInMetres : Float? = nil
+            
+            switch firstUnit {
+            case "Metre":
+                lengthInMetres = mainNumber!
+            case "Centimetre":
+                lengthInMetres = mainNumber! / 100
+            case "Micrometre":
+                lengthInMetres = mainNumber! / pow(10, 6)
+            case "Nanometre":
+                lengthInMetres = mainNumber! / pow(10, 9)
+            case "Foot":
+                lengthInMetres = mainNumber! / 3.281
+            case "Yard":
+                lengthInMetres = mainNumber! / 1.094
+            case "Inch":
+                lengthInMetres = mainNumber! / 39.37
+            case "Kilometre":
+                lengthInMetres = mainNumber! * 1000
+            case "Mile":
+                lengthInMetres = mainNumber! * 1609
+            case "Nautical Mile":
+                lengthInMetres = mainNumber! * 1852
+            default:
+                print("Nothing...")
+            }
+            
+            switch secondUnit {
+            case "Metre":
+                return lengthInMetres!
+            case "Centimetre":
+                return lengthInMetres! * 100
+            case "Micrometre":
+                return lengthInMetres! * pow(10, 6)
+            case "Nanometre":
+                return lengthInMetres! * pow(10, 9)
+            case "Foot":
+                return lengthInMetres! * 3.281
+            case "Yard":
+                return lengthInMetres! * 1.094
+            case "Inch":
+                return lengthInMetres! * 39.37
+            case "Kilometre":
+                return lengthInMetres! / 1000
+            case "Mile":
+                return lengthInMetres! / 1609
+            case "Nautical Mile":
+                return lengthInMetres! / 1852
+            default:
+                return -1
+            }
+        }
+    }
+    
     func convertTemperature() -> Float {
         let firstUnit = units["Temperature"]![firstUnitPicker.selectedRow(inComponent: 0)]
         let secondUnit = units["Temperature"]![secondUnitPicker.selectedRow(inComponent: 0)]
