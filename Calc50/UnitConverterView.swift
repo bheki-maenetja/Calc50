@@ -24,7 +24,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         "Area": ["Square Metre", "Square Foot", "Square Inch", "Square Yard", "Square Kilometre", "Square Mile", "Hectare", "Acre"],
         "Energy" : ["Joule", "Kilojoule", "Calorie", "Kilocalorie", "Watt Hour", "Kilowatt Hour"],
         "Length" : ["Metre", "Centimetre", "Micrometre", "Nanometre", "Foot", "Inch", "Yard", "Kilometre", "Mile", "Nautical Mile"],
-        "Mass" : ["Kilogram", "Gram", "Tonne", "Ounce", "Milligram", "Stone", "Microgram"],
+        "Mass" : ["Gram", "Kilogram", "Milligram", "Microgram", "Ounce", "Tonne", "Stone"],
         "Speed" : ["Metres per second", "Kilometres per hour", "Miles per hour", "Knot"],
         "Temperature" : ["Celsius", "Kelvin", "Fahrenheit"],
         "Time" : ["Second", "Minute", "Hour", "Day", "Week", "Millisecond", "Microsecond", "Nanosecond"],
@@ -252,6 +252,55 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                 return lengthInMetres! / 1609
             case "Nautical Mile":
                 return lengthInMetres! / 1852
+            default:
+                return -1
+            }
+        }
+    }
+    
+    func convertMass() -> Float {
+        let firstUnit = units["Mass"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Mass"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        
+        if firstUnit == secondUnit {
+            return mainNumber!
+        } else {
+            var massInGrams : Float? = nil
+            
+            switch firstUnit {
+            case "Gram":
+                massInGrams = mainNumber!
+            case "Kilogram":
+            massInGrams = mainNumber!
+            case "Milligram":
+            massInGrams = mainNumber!
+            case "Microgram":
+            massInGrams = mainNumber!
+            case "Ounce":
+            massInGrams = mainNumber!
+            case "Tonne":
+            massInGrams = mainNumber!
+            case "Stone":
+            massInGrams = mainNumber!
+            default:
+                print("Nothing...")
+            }
+            
+            switch secondUnit {
+            case "Gram":
+                return massInGrams!
+            case "Kilogram":
+            return massInGrams!
+            case "Milligram":
+            return massInGrams!
+            case "Microgram":
+            return massInGrams!
+            case "Ounce":
+            return massInGrams!
+            case "Tonne":
+            return massInGrams!
+            case "Stone":
+            return massInGrams!
             default:
                 return -1
             }
