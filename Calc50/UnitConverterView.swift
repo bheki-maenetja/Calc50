@@ -381,6 +381,59 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
+    func convertTime() -> Float {
+        let firstUnit = units["Time"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Time"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        
+        if firstUnit == secondUnit {
+            return mainNumber!
+        } else {
+            var timeInSeconds : Float? = nil
+            
+            switch firstUnit {
+            case "Seconds":
+                timeInSeconds = mainNumber!
+            case "Minute":
+                timeInSeconds = mainNumber! * 60
+            case "Hour":
+                timeInSeconds = mainNumber! * 3600
+            case "Day":
+                timeInSeconds = mainNumber! * 86400
+            case "Week":
+                timeInSeconds = mainNumber! * 604800
+            case "Millisecond":
+                timeInSeconds = mainNumber! / 1000
+            case "Microsecond":
+                timeInSeconds = mainNumber! / pow(10, 6)
+            case "Nanosecond":
+                timeInSeconds = mainNumber! / pow(10, 9)
+            default:
+                print("Nothing...")
+            }
+            
+            switch secondUnit {
+            case "Seconds":
+                return timeInSeconds!
+            case "Minute":
+                return timeInSeconds! / 60
+            case "Hour":
+                return timeInSeconds! / 3600
+            case "Day":
+                return timeInSeconds! / 86400
+            case "Week":
+                return timeInSeconds! / 604800
+            case "Millisecond":
+                return timeInSeconds! * 1000
+            case "Microsecond":
+                return timeInSeconds! * pow(10, 6)
+            case "Nanosecond":
+                return timeInSeconds! * pow(10, 9)
+            default:
+                return -1
+            }
+        }
+    }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoryPicker {
             print("Changing category...")
