@@ -84,6 +84,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             answerText.text = "\(mainNumber!)"
         case "Mass":
             print("Will convert mass...")
+            mainNumber = convertMass()
+            answerText.text = "\(mainNumber!)"
         case "Speed":
             print("Will convert speed...")
         case "Temperature":
@@ -271,17 +273,17 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             case "Gram":
                 massInGrams = mainNumber!
             case "Kilogram":
-            massInGrams = mainNumber!
+                massInGrams = mainNumber! * 1000
             case "Milligram":
-            massInGrams = mainNumber!
+                massInGrams = mainNumber! / 1000
             case "Microgram":
-            massInGrams = mainNumber!
+                massInGrams = mainNumber! / pow(10, 6)
             case "Ounce":
-            massInGrams = mainNumber!
+                massInGrams = mainNumber! * 28.35
             case "Tonne":
-            massInGrams = mainNumber!
+                massInGrams = mainNumber! * pow(10, 6)
             case "Stone":
-            massInGrams = mainNumber!
+                massInGrams = mainNumber! * 6350
             default:
                 print("Nothing...")
             }
@@ -290,17 +292,17 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             case "Gram":
                 return massInGrams!
             case "Kilogram":
-            return massInGrams!
+                return massInGrams! / 1000
             case "Milligram":
-            return massInGrams!
+                return massInGrams! * 1000
             case "Microgram":
-            return massInGrams!
+                return massInGrams! * pow(10, 6)
             case "Ounce":
-            return massInGrams!
+                return massInGrams! / 28.35
             case "Tonne":
-            return massInGrams!
+                return massInGrams! / pow(10, 6)
             case "Stone":
-            return massInGrams!
+                return massInGrams! / 6350
             default:
                 return -1
             }
@@ -348,6 +350,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             
             firstUnitPicker.selectRow(0, inComponent: 0, animated: true)
             secondUnitPicker.selectRow(0, inComponent: 0, animated: true)
+            
             mainNumber = nil
             answerText.text = ""
             textField.text = ""
