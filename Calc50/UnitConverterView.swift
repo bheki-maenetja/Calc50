@@ -72,10 +72,12 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         switch chosenCategory {
         case "Area":
             print("Will convert area...")
+            mainNumber = convertArea()
+            answerText.text = "\(mainNumber!)"
         case "Energy":
-            print("Will convert speed...")
+            print("Will convert energy...")
         case "Length":
-            print("Will convert speed...")
+            print("Will convert length...")
         case "Mass":
             print("Will convert mass...")
         case "Speed":
@@ -90,6 +92,57 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             print("Will convert volume...")
         default:
             print("Nothing...")
+        }
+    }
+    
+    func convertArea() -> Float {
+        let firstUnit = units["Area"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Area"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        
+        if firstUnit == secondUnit {
+            return mainNumber!
+        } else {
+            var areaInSquareMetres : Float? = nil
+            
+            switch firstUnit {
+            case "Square Metre":
+                areaInSquareMetres = mainNumber!
+            case "Square Foot":
+                areaInSquareMetres = mainNumber! / 10.764
+            case "Square Inch":
+                areaInSquareMetres = mainNumber! / 1550
+            case "Square Yard":
+                areaInSquareMetres = mainNumber! / 1.196
+            case "Square Kilometre":
+                areaInSquareMetres = mainNumber! * pow(10, 6)
+            case "Square Mile":
+                areaInSquareMetres = mainNumber! * (2.59 * pow(10, 6))
+            case "Hectare":
+                areaInSquareMetres = mainNumber! * 10000
+            case "Acre":
+                areaInSquareMetres = mainNumber! * 4047
+            default:
+                print("Nothing...")
+            }
+            
+            switch secondUnit {
+            case "Square Foot":
+                return areaInSquareMetres! * 10.764
+            case "Square Inch":
+                return areaInSquareMetres! * 1550
+            case "Square Yard":
+                return areaInSquareMetres! * 1.196
+            case "Square Kilometre":
+                return areaInSquareMetres! / pow(10, 6)
+            case "Square Mile":
+                return areaInSquareMetres! / (2.59 * pow(10, 6))
+            case "Hectare":
+                return areaInSquareMetres! / 10000
+            case "Acre":
+                return areaInSquareMetres! / 4047
+            default:
+                return -1
+            }
         }
     }
     
@@ -135,10 +188,12 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             mainNumber = nil
             answerText.text = ""
             textField.text = ""
-        } else if pickerView == firstUnitPicker {
-            print("Changing first unit...")
-        } else if pickerView == secondUnitPicker {
-            print("Changing second unit...")
+        } else if pickerView == firstUnitPicker || pickerView == secondUnitPicker {
+            print("Changing unit...")
+            if mainNumber != nil {
+                mainNumber = Float(textField.text!)
+                handleCategory(chosenCategory: unitCategories[categoryPicker.selectedRow(inComponent: 0)])
+            }
         }
     }
     
