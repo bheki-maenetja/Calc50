@@ -96,6 +96,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             answerText.text = "\(mainNumber!)"
         case "Time":
             print("Will convert time...")
+            mainNumber = convertTime()
+            answerText.text = "\(mainNumber!)"
         case "Volume":
             print("Will convert volume...")
         default:
@@ -391,7 +393,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             var timeInSeconds : Float? = nil
             
             switch firstUnit {
-            case "Seconds":
+            case "Second":
                 timeInSeconds = mainNumber!
             case "Minute":
                 timeInSeconds = mainNumber! * 60
@@ -412,7 +414,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             }
             
             switch secondUnit {
-            case "Seconds":
+            case "Second":
                 return timeInSeconds!
             case "Minute":
                 return timeInSeconds! / 60
