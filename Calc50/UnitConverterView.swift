@@ -18,18 +18,17 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     var mainNumber : Float? = nil
     
-    var unitCategories: [String] = ["Temperature", "Mass", "Force", "Distance", "Time"]
+    var unitCategories: [String] = ["Area", "Energy", "Length", "Mass", "Speed", "Temperature", "Time", "Volume"]
     
     var units : [String : [String]] = [
-        "Area": [""],
-        "Energy" : [""],
-        "Force" : ["Newton", "Pound", "Kip"],
-        "Length" : ["Metre", "Yard", "Kilometre", "Mile", "Lightyear"],
-        "Mass" : ["Kilogram", "Gram", "Tonne", "Ounce", "Milligram"],
-        "Speed" : [""],
+        "Area": ["Square Metre", "Square Foot", "Square Inch", "Square Yard", "Square Kilometre", "Square Mile", "Hectare", "Acre"],
+        "Energy" : ["Joule", "Kilojoule", "Calorie", "Kilocalorie", "Watt Hour", "Megawatt Hour"],
+        "Length" : ["Metre", "Centimetre", "Micrometre", "Nanometre", "Foot", "Inch", "Yard", "Kilometre", "Mile", "Nautical Mile"],
+        "Mass" : ["Kilogram", "Gram", "Tonne", "Ounce", "Milligram", "Stone", "Microgram"],
+        "Speed" : ["Metres per second", "Kilometres per hour", "Miles per hour", "Knot"],
         "Temperature" : ["Celsius", "Kelvin", "Fahrenheit"],
-        "Time" : ["Second", "Minute", "Hour", "Day"],
-        "Volume": [""],
+        "Time" : ["Second", "Minute", "Hour", "Day", "Week", "Millisecond", "Microsecond", "Nanosecond"],
+        "Volume": ["Litre", "Millilitre", "Gallon", "Pint", "Cubic Metre"],
     ]
     
     override func viewDidLoad() {
