@@ -70,18 +70,24 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     func handleCategory(chosenCategory : String) {
         switch chosenCategory {
+        case "Area":
+            print("Will convert area...")
+        case "Energy":
+            print("Will convert speed...")
+        case "Length":
+            print("Will convert speed...")
+        case "Mass":
+            print("Will convert mass...")
+        case "Speed":
+            print("Will convert speed...")
         case "Temperature":
             print("Will convert temperature...")
             mainNumber = convertTemperature()
             answerText.text = "\(mainNumber!)"
-        case "Mass":
-            print("Will convert mass...")
-        case "Force":
-            print("Will convert force...")
-        case "Distance":
-            print("Will convert distance...")
         case "Time":
             print("Will convert time...")
+        case "Volume":
+            print("Will convert volume...")
         default:
             print("Nothing...")
         }
