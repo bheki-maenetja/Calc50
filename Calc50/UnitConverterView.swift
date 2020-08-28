@@ -76,6 +76,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             answerText.text = "\(mainNumber!)"
         case "Energy":
             print("Will convert energy...")
+            mainNumber = convertEnergy()
+            answerText.text = "\(mainNumber!)"
         case "Length":
             print("Will convert length...")
         case "Mass":
@@ -126,6 +128,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             }
             
             switch secondUnit {
+            case "Square Metre":
+                return areaInSquareMetres!
             case "Square Foot":
                 return areaInSquareMetres! * 10.764
             case "Square Inch":
@@ -147,8 +151,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     func convertEnergy() -> Float {
-        let firstUnit = units["Area"]![firstUnitPicker.selectedRow(inComponent: 0)]
-        let secondUnit = units["Area"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        let firstUnit = units["Energy"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Energy"]![secondUnitPicker.selectedRow(inComponent: 0)]
         
         if firstUnit == secondUnit {
             return mainNumber!
@@ -159,7 +163,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             case "Joule":
                 energyInJoules = mainNumber!
             case "Kilojoule":
-                energyInJoules = mainNumber! / 1000
+                energyInJoules = mainNumber! * 1000
             case "Calorie":
                 energyInJoules = mainNumber! * 4.184
             case "Kilocalorie":
@@ -173,16 +177,18 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             }
             
             switch secondUnit {
+            case "Joule":
+                return energyInJoules!
             case "Kilojoule":
-                return energyInJoules! * 10.764
+                return energyInJoules! / 1000
             case "Calorie":
-                return energyInJoules! * 10.764
+                return energyInJoules! / 4.184
             case "Kilocalorie":
-                return energyInJoules! * 10.764
+                return energyInJoules! / 4184
             case "Watt Hour":
-                return energyInJoules! * 10.764
+                return energyInJoules! / 3600
             case "Kilowatt Hour":
-            return energyInJoules! * 10.764
+                return energyInJoules! / (3.6 * pow(10, 6))
             default:
                 return -1
             }
@@ -210,6 +216,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             }
             
             switch secondUnit {
+            case "Celsius":
+                return tempInCelsius!
             case "Kelvin":
                 return tempInCelsius! + 273.15
             case "Fahrenheit":
