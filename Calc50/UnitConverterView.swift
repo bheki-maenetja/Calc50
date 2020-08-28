@@ -23,7 +23,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var units : [String : [String]] = [
         "Temperature" : ["Celsius", "Kelvin", "Fahrenheit"],
         "Mass" : ["Kilogram", "Gram", "Tonne", "Ounce", "Milligram"],
-        "Force" : ["Newtom", "Pound", "Kip"],
+        "Force" : ["Newton", "Pound", "Kip"],
         "Distance" : ["Metre", "Yard", "Kilometre", "Mile", "Lightyear"],
         "Time" : ["Second", "Minute", "Hour", "Day"]
     ]
@@ -120,6 +120,12 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             print("Changing category...")
             firstUnitPicker.reloadAllComponents()
             secondUnitPicker.reloadAllComponents()
+            
+            firstUnitPicker.selectRow(0, inComponent: 0, animated: true)
+            secondUnitPicker.selectRow(0, inComponent: 0, animated: true)
+            mainNumber = nil
+            answerText.text = ""
+            textField.text = ""
         } else if pickerView == firstUnitPicker {
             print("Changing first unit...")
         } else if pickerView == secondUnitPicker {
