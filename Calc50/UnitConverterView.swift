@@ -21,11 +21,15 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var unitCategories: [String] = ["Temperature", "Mass", "Force", "Distance", "Time"]
     
     var units : [String : [String]] = [
-        "Temperature" : ["Celsius", "Kelvin", "Fahrenheit"],
-        "Mass" : ["Kilogram", "Gram", "Tonne", "Ounce", "Milligram"],
+        "Area": [""],
+        "Energy" : [""],
         "Force" : ["Newton", "Pound", "Kip"],
-        "Distance" : ["Metre", "Yard", "Kilometre", "Mile", "Lightyear"],
-        "Time" : ["Second", "Minute", "Hour", "Day"]
+        "Length" : ["Metre", "Yard", "Kilometre", "Mile", "Lightyear"],
+        "Mass" : ["Kilogram", "Gram", "Tonne", "Ounce", "Milligram"],
+        "Speed" : [""],
+        "Temperature" : ["Celsius", "Kelvin", "Fahrenheit"],
+        "Time" : ["Second", "Minute", "Hour", "Day"],
+        "Volume": [""],
     ]
     
     override func viewDidLoad() {
