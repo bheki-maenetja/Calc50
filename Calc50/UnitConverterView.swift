@@ -54,8 +54,30 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBAction func convertUnits(_ sender: UIButton) {
         textField.endEditing(true)
-        mainValue = textField.text != "" ? Float(textField.text!) : 0
-        answerText.text = "\(mainValue)"
+        mainValue = textField.text != "" ? Float(textField.text!) : nil
+        if mainValue != nil {
+            answerText.text = "\(mainValue)"
+            handleCategory(chosenCategory: unitCategories[categoryPicker.selectedRow(inComponent: 0)])
+        } else {
+            answerText.text = ""
+        }
+    }
+    
+    func handleCategory(chosenCategory : String) {
+        switch chosenCategory {
+        case "Temperature":
+            print("Will convert temperature...")
+        case "Mass":
+            print("Will convert mass...")
+        case "Force":
+            print("Will convert force...")
+        case "Distance":
+            print("Will convert distance...")
+        case "Time":
+            print("Will convert time...")
+        default:
+            print("Nothing...")
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
