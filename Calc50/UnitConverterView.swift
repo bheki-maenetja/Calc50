@@ -22,7 +22,7 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     var units : [String : [String]] = [
         "Area": ["Square Metre", "Square Foot", "Square Inch", "Square Yard", "Square Kilometre", "Square Mile", "Hectare", "Acre"],
-        "Energy" : ["Joule", "Kilojoule", "Calorie", "Kilocalorie", "Watt Hour", "Megawatt Hour"],
+        "Energy" : ["Joule", "Kilojoule", "Calorie", "Kilocalorie", "Watt Hour", "Kilowatt Hour"],
         "Length" : ["Metre", "Centimetre", "Micrometre", "Nanometre", "Foot", "Inch", "Yard", "Kilometre", "Mile", "Nautical Mile"],
         "Mass" : ["Kilogram", "Gram", "Tonne", "Ounce", "Milligram", "Stone", "Microgram"],
         "Speed" : ["Metres per second", "Kilometres per hour", "Miles per hour", "Knot"],
@@ -140,6 +140,49 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                 return areaInSquareMetres! / 10000
             case "Acre":
                 return areaInSquareMetres! / 4047
+            default:
+                return -1
+            }
+        }
+    }
+    
+    func convertEnergy() -> Float {
+        let firstUnit = units["Area"]![firstUnitPicker.selectedRow(inComponent: 0)]
+        let secondUnit = units["Area"]![secondUnitPicker.selectedRow(inComponent: 0)]
+        
+        if firstUnit == secondUnit {
+            return mainNumber!
+        } else {
+            var energyInJoules : Float? = nil
+            
+            switch firstUnit {
+            case "Joule":
+                energyInJoules = mainNumber!
+            case "Kilojoule":
+                energyInJoules = mainNumber! / 1000
+            case "Calorie":
+                energyInJoules = mainNumber! * 4.184
+            case "Kilocalorie":
+                energyInJoules = mainNumber! * 4184
+            case "Watt Hour":
+                energyInJoules = mainNumber! * 3600
+            case "Kilowatt Hour":
+                energyInJoules = mainNumber! * (3.6 * pow(10, 6))
+            default:
+                print("Nothing...")
+            }
+            
+            switch secondUnit {
+            case "Kilojoule":
+                return energyInJoules! * 10.764
+            case "Calorie":
+                return energyInJoules! * 10.764
+            case "Kilocalorie":
+                return energyInJoules! * 10.764
+            case "Watt Hour":
+                return energyInJoules! * 10.764
+            case "Kilowatt Hour":
+            return energyInJoules! * 10.764
             default:
                 return -1
             }
