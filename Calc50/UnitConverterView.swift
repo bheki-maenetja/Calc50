@@ -100,6 +100,8 @@ class UnitConverterView: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             answerText.text = "\(mainNumber!)"
         case "Volume":
             print("Will convert volume...")
+            mainNumber = convertVolume()
+            answerText.text = "\(mainNumber!)"
         default:
             print("Nothing...")
         }
