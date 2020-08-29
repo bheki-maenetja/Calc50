@@ -31,7 +31,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calc50" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Calc50" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,6 +59,10 @@ Your #1 calculation tool!!!</string>
                                                         <state key="normal" title="Simple Calculator">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="simpleCalcSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JxP-8C-9Ca"/>
+                                                            <action selector="simpleCalcSegue:" destination="ecc-fi-dsl" eventType="touchUpInside" id="bDk-Ar-wDy"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzU-ji-m3F">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="192.5"/>
@@ -66,6 +70,9 @@ Your #1 calculation tool!!!</string>
                                                         <state key="normal" title="Advanced Calculator">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="simpleCalcSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kXQ-lG-0qu"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -78,6 +85,9 @@ Your #1 calculation tool!!!</string>
                                                         <state key="normal" title="Date Calculator">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="simpleCalcSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="et9-pa-JtS"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zp-En-YIt">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="192"/>
@@ -85,6 +95,9 @@ Your #1 calculation tool!!!</string>
                                                         <state key="normal" title="Unit Converter">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="simpleCalcSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MrH-gh-XZ7"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -106,6 +119,7 @@ Your #1 calculation tool!!!</string>
                     <navigationItem key="navigationItem" id="uhw-bc-kww"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="ecc-fi-dsl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>

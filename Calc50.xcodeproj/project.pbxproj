@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090EBD3A24FA818C003CCB33 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090EBD3924FA818C003CCB33 /* HomeViewController.swift */; };
 		0947750024DD711900DE4280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094774FF24DD711900DE4280 /* AppDelegate.swift */; };
 		0947750224DD711900DE4280 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947750124DD711900DE4280 /* SceneDelegate.swift */; };
 		0947750424DD711900DE4280 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947750324DD711900DE4280 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090EBD3924FA818C003CCB33 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		094774FC24DD711800DE4280 /* Calc50.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc50.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094774FF24DD711900DE4280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0947750124DD711900DE4280 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				0947750124DD711900DE4280 /* SceneDelegate.swift */,
 				0947750324DD711900DE4280 /* ViewController.swift */,
 				0947751524DD77E800DE4280 /* SimpleArithmeticView.swift */,
+				090EBD3924FA818C003CCB33 /* HomeViewController.swift */,
 				0947751724DD79D900DE4280 /* ComplexArithmeticView.swift */,
 				0947751924DD7A0300DE4280 /* UnitConverterView.swift */,
 				0947751B24DD7A2600DE4280 /* DateCalculatorView.swift */,
@@ -153,6 +156,7 @@
 				0947751824DD79D900DE4280 /* ComplexArithmeticView.swift in Sources */,
 				0947751A24DD7A0300DE4280 /* UnitConverterView.swift in Sources */,
 				0947751624DD77E800DE4280 /* SimpleArithmeticView.swift in Sources */,
+				090EBD3A24FA818C003CCB33 /* HomeViewController.swift in Sources */,
 				0947750424DD711900DE4280 /* ViewController.swift in Sources */,
 				0947751C24DD7A2600DE4280 /* DateCalculatorView.swift in Sources */,
 				0947750024DD711900DE4280 /* AppDelegate.swift in Sources */,
