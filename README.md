@@ -25,3 +25,51 @@ Calc50 is a mobile iOS calculator application built with Swift and Xcode. The ap
 
 ### Date Calculator
 - The date calculator allows to calculate the time between any two calendar dates. This time can be expressed in different units such as seconds, days, weeks and hours.
+
+## Development
+### Navigation
+- Each calculator has its own view controller and each view controller is nested in a tab bar controller. The allows for the easy navigation between different calculators and the home page. Additionally, on the home page are four buttons that take the user to one of the four calculators. Rather than using segues, to implement the functionality of the buttons I used an `@IBAction` function that changes the `selectedIndex` property of the parent tab bar controller
+```
+@IBAction func simpleCalcSegue(_ sender: UIButton) {
+      switch String(sender.title(for: .normal)!) {
+        case "Simple Calculator":
+            self.tabBarController?.selectedIndex = 1
+        case "Advanced Calculator":
+            self.tabBarController?.selectedIndex = 2
+        case "Date Calculator":
+            self.tabBarController?.selectedIndex = 3
+        case "Unit Converter":
+            self.tabBarController?.selectedIndex = 4
+        default:
+            print("Nothing...")
+      }
+}
+```
+### Switch Statements
+- Switch statements feature heavily in the source of this app. On the simple calculator they are used to discern the symbol of the button that the user has just tapped; they're also used to determine what calculation should be performed if the symbol is an operator symbol. Switch statements on the advanced calculator have a similar purpose to those on the simple calculator. On the unit converter switch statments are used to implement the functionality of the UIPickerViews. The function handleCategory uses a switch statement to determine which conversion function to call, this depends on the name of the selected unit category. On the date calculator a switch statement is used to determine which unit of time in which to express the interval between the two chosen dates.
+```
+func calculateDateInterval(category : String) -> Int {
+        switch category {
+        case "seconds":
+            let timeInterval = Calendar.current.dateComponents([.second], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.second!)
+        case "minutes":
+            let timeInterval = Calendar.current.dateComponents([.minute], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.minute!)
+        case "hours":
+            let timeInterval = Calendar.current.dateComponents([.hour], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.hour!)
+        case "days":
+            let timeInterval = Calendar.current.dateComponents([.day], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.day!)
+        case "months":
+            let timeInterval = Calendar.current.dateComponents([.month], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.month!)
+        case "years":
+            let timeInterval = Calendar.current.dateComponents([.year], from: firstDatePicker.date, to: secondDatePicker.date)
+            return Int(timeInterval.year!)
+        default:
+            return -1
+        }
+}
+```
