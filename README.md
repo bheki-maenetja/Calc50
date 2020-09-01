@@ -73,3 +73,75 @@ func calculateDateInterval(category : String) -> Int {
         }
 }
 ```
+## Reflection
+### Challenges
+- **Simple Calculator:** rather ironically, the hardest part of this project was the implementation of the 'simple calculator'. Firstly, this required the creation and implementation of a keyboard from scratch. Keeping track what number the user had just typed as well as the current operator symbol and answer value proved to be quite challenging. Additionally, there were myriad of other minor obstacles such as string validation, type conversion and the handling of decimal symbols.
+- **Picker Views:** the implementation of `UIPickerView`s on the unit converter proved to be a bit of a challenge. The unit converter has three picker views: one for selecting the unit category and two for selecting the units that the user will convert to and from. I had trouble implementing functionality that would change the two unit picker views when the user selected a different category of units
+
+### Room for Improvement
+- **Code Refactoring:** 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
